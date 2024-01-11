@@ -26,6 +26,15 @@ section {
   height: 100vh;
   scroll-snap-align: center;
 }
+// #Projects section {
+//   height: 80vh;
+//   scroll-snap-align: center;
+// }
 #About {
   background: linear-gradient(180deg, #111132, #0c0c1d);
+}
+
+#Projects {
+
+  background: linear-gradient(180deg, #0c0c1d, #111132);
 }

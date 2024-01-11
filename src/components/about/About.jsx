@@ -11,7 +11,7 @@ function About() {
 		target: ref,
 		offset: ["start start", "end start"], //animation, target, animation, -  animation start when target is on the top  and  animation is end wten top of the target reaches start
 	});
-	const transformText = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
+	const transformText = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 	const transformType =
 		windowWidth < 900 ? { x: transformText } : { y: transformText };
 
@@ -33,12 +33,15 @@ function About() {
 				working as application programmer, using React Native, React and
 				Typescript on application for enginerrs, and as junior developer in
 				Rzeszów on a big e-commerce app.
+				<hr />
 			</motion.p>
+
 			<motion.p className="about__text about__text--2">
 				I live in a small town of Mielec in Poland. I am a self-taught learner
 				who is passionate about computers and coding. In my spare time I love
 				listening to progressive rock, reading books and hiking in the
 				mountains.
+				<hr />
 			</motion.p>
 			<motion.p className="about__text about__text--3">
 				I am willing <span>to cooperate </span>and continue my adventure with IT

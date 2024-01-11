@@ -2,7 +2,8 @@ import "./app.scss";
 import About from "./components/about/About";
 import Hero from "./components/hero/Hero";
 import Navbar from "./components/navbar/Navbar";
-import Parallax from "./components/parallax/Parallax";
+import Portfolio from "./components/portfolio/Portfolio";
+// import Parallax from "./components/parallax/Parallax";
 
 const App = () => {
 	return (
@@ -15,12 +16,15 @@ const App = () => {
 				{/* <Parallax type="services" /> */}
 				<About />
 			</section>
-			<section id="Projects">
-				<Parallax type="portfolio" />{" "}
-			</section>
-			<section>Portfolio1 </section>
-			<section>POrtfolio2 </section>
-			<section id="Experience"> Experience</section>
+			{/* <section id="Projects"> */}
+			{/* <Parallax type="portfolio" />{" "} */}
+			{/* <Services /> */}
+			{/* <section id="Projects"> */}
+			<Portfolio />
+			{/* </section> */}
+			{/* </section> */}
+
+			<section id="Experience"> </section>
 			<section id="Contact"> Contact</section>
 		</div>
 	);
