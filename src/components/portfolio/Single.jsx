@@ -39,7 +39,7 @@ function Single({ item }) {
 									<FaArrowRightLong size={24} />
 								</button>
 							</div>
-							<img src={item.img} alt="" />
+							<img src={item.images[0]} alt="" />
 						</div>
 					</div>
 				</div>
