@@ -4,11 +4,16 @@ import { experience } from "../../data/experience";
 
 function Experience() {
 	const skillColors = [
-		{ background: "#BDBDBD", color: "#000000", border: "#000000" },
-		{ background: "#ffe099", color: "#000000", border: "#000000" },
-		{ background: "#10112E", color: "#ffffff", border: "#ffffff" },
-		{ background: "#ffffde", color: "#000000", border: "#000000" },
-		{ background: "#f18275", color: "#000000", border: "#000000" },
+		{ background: "#8089e6", color: "#000000", border: "#8089e6" },
+		{ background: "#8089e6", color: "#000000", border: "#8089e6" },
+		{ background: "#10112E", color: "#8089e6", border: "#8089e6" },
+		{ background: "#10112E", color: "#8089e6", border: "#8089e6" },
+		{ background: "#8089e6", color: "#000000", border: "#8089e6" },
+		// { background: "#BDBDBD", color: "#000000", border: "#000000" },
+		// { background: "#ffe099", color: "#000000", border: "#000000" },
+		// { background: "#10112E", color: "#ffffff", border: "#ffffff" },
+		// { background: "#10112E", color: "#ffffff", border: "#ffffff" },
+		// { background: "#f3958b", color: "#000000", border: "#000000" },
 	];
 
 	const getRandomColor = () => {
@@ -17,7 +22,12 @@ function Experience() {
 	};
 
 	const getRandomColumn = () => {
-		return Math.random() < 0.5 ? 1 : 2;
+		const randomNumber = Math.random();
+		return randomNumber < 0.33
+			? 1
+			: randomNumber >= 0.33 && randomNumber < 0.66
+			? 2
+			: 3;
 	};
 
 	const rightContainerRef = useRef(null);
@@ -58,8 +68,12 @@ function Experience() {
 				return (
 					<div className="workBox" key={box.id}>
 						<div className="workHeader">
-							<div className="year">{box.year}</div>
-							<p>{box.name}</p>
+							<div className="company">
+								{" "}
+								<div className="year">{box.year}</div>
+								<p>{box.name}</p>
+							</div>
+							<div className="empty"></div>
 						</div>
 						<div className="workBody">
 							<div className="left">{box.desc}</div>
@@ -72,7 +86,7 @@ function Experience() {
 											color: lang.color,
 											gridColumn: lang.column,
 											gridRow: lang.row,
-											outline: lang.border,
+											border: lang.border,
 										}}
 									>
 										{lang.name}

@@ -27,26 +27,32 @@
 
 		.workHeader {
 			display: flex;
+			width: 100%;
+			.company {
+				display: flex;
+				flex: 1;
+				// flex-basis: 100%;
+				// justify-content: space-between;
 
-			.year {
-				color: #8089e6;
-				font-size: 24px;
-				font-weight: 600;
-				padding: 1em 1.2em;
-				border: 1px solid white;
-        margin-right: 10px;
-			}
-			p {
-				color: #ffd166;
-				font-size: 20px;
-				align-self: center;
+				.year {
+					color: #8089e6;
+					font-size: 24px;
+					font-weight: 600;
+					padding: 1em 1.2em;
+					border: 1px solid white;
+					margin-right: 10px;
+				}
+				p {
+					color: #ffd166;
+					font-size: 20px;
+					align-self: center;
+				}
 			}
 		}
 		.workBody {
 			display: flex;
 			font-size: 20px;
 			gap: 80px;
-		
 
 			.left {
 				flex: 2;
@@ -56,24 +62,36 @@
 				// margin-top:40px;
 			}
 			.right {
-				flex: 1;
-        display: grid;
-        grid-gap:0;
-        grid-template-columns:120px 120px;
-        grid-template-rows:80px 80px;
-        
+				// flex: 1;
+				flex-basis:360px;
+				display: grid;
+				grid-gap: 0;
+				grid-template-columns: 120px 120px 120px;
+				grid-template-rows: 80px 80px;
 
 				div {
-          // grid-column-start;
+					// grid-column-start;
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					border-width: 1.5px;
 					border-style: solid;
 					width: 120px;
+					// padding: 1.5px;
 					height: 80px;
 				}
 			}
 		}
+	}
+	.empty {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1.5px solid #8089e6;
+		width: 120px;
+		padding:2px;
+		height: 80px;
+		justify-self: flex-end;
+		// background-color: #8089e6;
 	}
 }
