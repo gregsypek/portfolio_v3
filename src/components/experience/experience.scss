@@ -1,0 +1,79 @@
+.experience {
+	// background-color: blueviolet;
+	height: 100%;
+	height: 100%;
+	margin: 0 auto;
+	max-width: 1366px;
+
+	.headerBox {
+		// border: 1px solid #d3d3d3;
+		aspect-ratio: 2/1;
+		// background-color: #0c0c1f;
+		padding: 20px;
+		width: 350px;
+		height: auto;
+		h1 {
+			text-align: start;
+			color: #d3d3d3;
+			font-size: 67px;
+			width: 200%;
+		}
+	}
+	.workBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+
+		.workHeader {
+			display: flex;
+
+			.year {
+				color: #8089e6;
+				font-size: 24px;
+				font-weight: 600;
+				padding: 1em 1.2em;
+				border: 1px solid white;
+        margin-right: 10px;
+			}
+			p {
+				color: #ffd166;
+				font-size: 20px;
+				align-self: center;
+			}
+		}
+		.workBody {
+			display: flex;
+			font-size: 20px;
+			gap: 80px;
+		
+
+			.left {
+				flex: 2;
+				margin-left: 85px;
+				border-left: 2px solid #ffd166;
+				padding: 58px 18px 58px 48px;
+				// margin-top:40px;
+			}
+			.right {
+				flex: 1;
+        display: grid;
+        grid-gap:0;
+        grid-template-columns:120px 120px;
+        grid-template-rows:80px 80px;
+        
+
+				div {
+          // grid-column-start;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-width: 1.5px;
+					border-style: solid;
+					width: 120px;
+					height: 80px;
+				}
+			}
+		}
+	}
+}
