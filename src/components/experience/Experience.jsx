@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./experience.scss";
 import { experience } from "../../data/experience";
+import SkillBox from "./SkillBox";
 
 function Experience() {
 	const skillColors = [
@@ -30,7 +31,6 @@ function Experience() {
 			: 3;
 	};
 
-	const rightContainerRef = useRef(null);
 	const [skillBoxes, setSkillBoxes] = useState([]);
 
 	useEffect(() => {
@@ -65,37 +65,7 @@ function Experience() {
 				<h1>Skills & Experiences</h1>
 			</div>
 			{skillBoxes.map((box) => {
-				return (
-					<div className="workBox" key={box.id}>
-						<div className="workHeader">
-							<div className="company">
-								{" "}
-								<div className="year">{box.year}</div>
-								<p>{box.name}</p>
-							</div>
-							<div className="empty"></div>
-						</div>
-						<div className="workBody">
-							<div className="left">{box.desc}</div>
-							<div className="right" ref={rightContainerRef}>
-								{box.languages.map((lang) => (
-									<div
-										key={lang.name}
-										style={{
-											backgroundColor: lang.backgroundColor,
-											color: lang.color,
-											gridColumn: lang.column,
-											gridRow: lang.row,
-											border: lang.border,
-										}}
-									>
-										{lang.name}
-									</div>
-								))}
-							</div>
-						</div>
-					</div>
-				);
+				return <SkillBox box={box} key={box.id} />;
 			})}
 		</div>
 	);

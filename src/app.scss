@@ -21,10 +21,13 @@ a {
   text-decoration: none;
   color:inherit
 }
-
 section {
-  height: 100vh;
+
   scroll-snap-align: center;
+}
+
+section:not(#Experience) {
+  height: 100vh;
 }
 // #Projects section {
 //   height: 80vh;
