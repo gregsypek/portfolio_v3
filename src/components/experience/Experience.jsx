@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import "./experience.scss";
 import { experience } from "../../data/experience";
 import SkillBox from "./SkillBox";
 
 function Experience() {
 	const skillColors = [
-		{ background: "#8089e6", color: "#000000", border: "#8089e6" },
-		{ background: "#8089e6", color: "#000000", border: "#8089e6" },
+		{ background: "#141543", color: "#8089e6", border: "#8089e6" },
+		{ background: "#16173c", color: "#8089e6", border: "#8089e6" },
+		{ background: "#10112c", color: "#8089e6", border: "#8089e6" },
+		{ background: "#0c0d23", color: "#8089e6", border: "#8089e6" },
 		{ background: "#10112E", color: "#8089e6", border: "#8089e6" },
-		{ background: "#10112E", color: "#8089e6", border: "#8089e6" },
-		{ background: "#8089e6", color: "#000000", border: "#8089e6" },
 		// { background: "#BDBDBD", color: "#000000", border: "#000000" },
 		// { background: "#ffe099", color: "#000000", border: "#000000" },
 		// { background: "#10112E", color: "#ffffff", border: "#ffffff" },
