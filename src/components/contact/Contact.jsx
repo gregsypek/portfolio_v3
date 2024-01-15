@@ -1,6 +1,16 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import "./contact.scss";
 import { motion, useInView } from "framer-motion";
+import emailjs from "@emailjs/browser";
+
+// // const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+// // const serviceId = process.env.REACT_APP_SERVICE_ID;
+// // const templateId = process.env.REACT_APP_TEMPLATE_ID;
+// const publicKey = import.meta.env.REACT_APP_PUBLIC_KEY;
+
+// const serviceId = import.meta.env.REACT_APP_SERVICE_ID;
+
+// const templateId = import.meta.env.REACT_APP_TEMPLATE_ID;
 
 const variants = {
 	initial: {
@@ -19,7 +29,34 @@ const variants = {
 
 const Contact = () => {
 	const ref = useRef();
+	const formRef = useRef();
+	const [error, setError] = useState(false);
+	const [success, setSuccess] = useState(false);
 	const isInView = useInView(ref, { margin: "-100px" });
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+
+		emailjs
+			.sendForm(
+				// serviceId,
+				// templateId,
+				// formRef.current,
+				// publicKey
+				"service_0k67hif",
+				"template_m8tr4ow",
+				formRef.current,
+				"LKt2c2f674mnn8bG-"
+			)
+			.then(
+				() => {
+					setSuccess(true);
+				},
+				() => {
+					setError(true);
+				}
+			);
+	};
 
 	return (
 		<motion.div
@@ -280,6 +317,8 @@ const Contact = () => {
 			</motion.div>
 			<div className="formContainer">
 				<motion.form
+					ref={formRef}
+					onSubmit={sendEmail}
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					transition={{ delay: 0.3, duration: 1 }}
@@ -288,6 +327,11 @@ const Contact = () => {
 					<input type="email" required placeholder="Email" name="email" />
 					<textarea rows={8} placeholder="Message" name="message" />
 					<button>Submit</button>
+
+					{error &&
+						"I am sorry, but there was an error processing your request. Please try again later."}
+					{success &&
+						"Thank you for contacting me. Your email has been sent! Please allow some time for me to respond :)"}
 				</motion.form>
 			</div>
 		</motion.div>
