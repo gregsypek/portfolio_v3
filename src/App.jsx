@@ -1,6 +1,7 @@
 import "./app.scss";
 import About from "./components/about/About";
 import Contact from "./components/contact/Contact";
+import Cursor from "./components/cursor/Cursor";
 import Experience from "./components/experience/Experience";
 import Footer from "./components/footer/Footer";
 import Hero from "./components/hero/Hero";
@@ -11,6 +12,7 @@ import Portfolio from "./components/portfolio/Portfolio";
 const App = () => {
 	return (
 		<div>
+			<Cursor />
 			<section id="Homepage">
 				<Navbar />
 				<Hero />
