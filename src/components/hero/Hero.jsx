@@ -46,7 +46,7 @@ const Hero = () => {
 					animate="animate"
 				>
 					<motion.h1 variants={textVariants}>
-						Web Developer & Content Creator
+						Web Developer & <br /> Content Creator
 					</motion.h1>
 					<motion.h2 variants={textVariants}>
 						I design and create web pages and projects with attention to clarity
