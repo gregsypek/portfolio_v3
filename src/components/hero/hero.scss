@@ -5,13 +5,13 @@
 	overflow: hidden;
 	background: linear-gradient(180deg, #0c0c1d, #111132);
 	position: relative;
-  // max-width: 1366px;
+	// max-width: 1366px;
 	.wrapper {
 		max-width: 1366px;
 		height: 100%;
 		margin: auto;
-    @include tablet {
-		height: 80%;
+		@include tablet {
+			height: 80%;
 		}
 	}
 	.textContainer {
@@ -22,7 +22,7 @@
 		justify-content: center;
 		gap: 30px;
 		// margin-top: -60px;
-    padding: 20px;
+		padding: 20px;
 
 		@include mobile {
 			height: 60%;
@@ -33,9 +33,9 @@
 			margin-top: 0px;
 		}
 		@include tablet {
-      width: 65%;
-      justify-content: top;
-      margin-top:20px;
+			width: 65%;
+			justify-content: top;
+			margin-top: 20px;
 		}
 
 		h2 {
@@ -67,25 +67,13 @@
 			position: relative;
 			z-index: 99;
 			button {
-				padding: 1.2em 0.8em;
-				border: 1px solid white;
-				border-radius: 10px;
-				background-color: transparent;
-				color: white;
-				margin-right: 20px;
-				cursor: pointer;
-				font-weight: 300;
-				font-size: 18px;
-
-				@include mobile {
-					font-size: 14px;
-				}
-				// background-color: red;
+				@include button-style(transparent, white, white, white);		
+				margin-right: 20px;			
 				&:hover {
-					background-color: white;
 					color: black;
 				}
 			}
+
 		}
 	}
 
@@ -110,8 +98,6 @@
 				object-fit: cover;
 				@include tablet {
 					// right: -%;
-				
-				
 				}
 			}
 		}
@@ -120,9 +106,9 @@
 			right: -25%;
 			transform: scale(60%);
 		}
-    @include desktop {
-      right: -15%;
-    }
+		@include desktop {
+			right: -15%;
+		}
 	}
 	.slidingTextContainer {
 		position: absolute;
@@ -130,7 +116,7 @@
 		bottom: -120px;
 		white-space: nowrap;
 		color: #ffffff09;
-		width: 50vw;
+		width: 40vw;
 		font-weight: bold;
 		// background-color: red;
 	}

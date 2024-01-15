@@ -1,6 +1,5 @@
 @import "../../app.scss";
 
-
 .navbar {
 	height: 100px;
 	.wrapper {
@@ -10,39 +9,42 @@
 		align-items: center;
 		justify-content: space-between;
 		height: 100%;
-		padding:20px;
-		
-		// @include mobile {
-		// justify-content: flex-end;
-		// padding:20px;
-		// }
+		padding: 20px;
 
-	.empty{
-		width: calc(50px + 20px)
-	}
-	
-		span {
-			font-weight: bold;
-			// margin-left: calc(50px + 20px);	
-			@include mobile {
-				display: none;
+		.left {
+			display: flex;
+			gap: 20px;
+			justify-content: flex-start;
+			@include desktop {
+				justify-content: flex-end;
+				flex: 1;
+				margin-right: 20px;
 			}
 			@include tv {
-				margin-left: auto;
-				margin-right: auto;	
+			display: none;
+				flex: 1;
 			}
-		
-		}
+			.empty {
+				width: calc(50px + 20px);
+				@include tv {
+					display: none;
+				}
+			}
 
+			span {
+				font-weight: bold;
+				@include mobile {
+				}
+			}
+		}
 		.social {
 			display: flex;
 			gap: 20px;
 			@include tv {
 				position: fixed;
 				right: 20px;
-				top:40px;
-		}
-			
+				top: 40px;
+			}
 		}
 	}
 }

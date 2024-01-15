@@ -1,3 +1,5 @@
+
+@import "../../app.scss";
 #About {
 	position: relative;
 }
@@ -14,16 +16,12 @@ overflow:hidden;
 	@media (min-width: 1200px) {
 		grid-template-rows: 350px, 350px repeat(1, minmax(auto, 1fr) 150px);
 	}
-	// position: relative;
 	max-width: 1366px;
 	margin: auto;
 	padding-block: 70px;
 	  width: 100%;
   height: 100%;
 
-	// @media (min-width: 900px) {
-	// 	padding: 75px;
-	// }
 	@media (min-width: 1400px) {
 		height: 100vh;
 	
@@ -41,7 +39,6 @@ overflow:hidden;
 			font-weight: 600;
 			width: 50%;
 			transform: translateX(-20%);
-			// color: gray;
 			@media (min-width: 1100px) {
 				font-size: 96px;
 			}
@@ -55,9 +52,7 @@ overflow:hidden;
 			align-items: center;
 			position: relative;
 
-			// h1 {
-			// 	// color: gray;
-			// }
+	
 			img {
 				display: none;
 				@media (min-width: 900px) {
@@ -94,7 +89,6 @@ overflow:hidden;
 		}
 	}
 	&__text {
-		// color: rgb(203, 202, 253);
 		@media (min-width: 900px) {
 			grid-column: 8 / span 6;
 			grid-row-start: 1;
@@ -102,7 +96,6 @@ overflow:hidden;
 
 		&--1 {
 			grid-column: 2/ -2;
-			// grid-row: 3 / span 2; //for box-2 if is visible 
 			grid-row: 2 / span 2;
 			@media (min-width: 900px) {
 				grid-column: 6 / span 9;
@@ -126,23 +119,23 @@ overflow:hidden;
 			}
 		}
 	}
+	
 	button {
+
+		@include button-style(#645B81, black,  #B7AED9, black);
 		grid-row: 7 / span 1;
 		grid-column-start: 7;
 		margin-top: 30px;
 		align-self: baseline;
-		padding: 20px;
-		border:1px solid white;
-		border-radius: 10px;
-		background-color: #C9AB91;
-		color:black;
-		cursor:pointer;
 		font-weight: 500;
-		font-size: 18px;
-		@media (min-width: 900px) {
+				@media (min-width: 900px) {
 			grid-column: 12 / span 3;
 			grid-row-start: 4;
 
+		}
+
+		&:hover {
+			color: black;
 		}
 	}
 	p {
@@ -172,21 +165,22 @@ overflow:hidden;
 			font-size: 24px;
 		}
 	}
-	.mountains {
-		display: none;
-		position: fixed;
-		bottom:0;
-		left: 0;
-		background-image: url("/about3.png");
-    background-size: contain;
-    background-position: bottom;
-		background-repeat: no-repeat;
-    width: 20vw;
-    height: 100%;
-    position: absolute;
-    z-index: 1;
-		@media (min-width: 900px) {
-			display: block;
-		}
+
+}
+.mountains {
+	display: none;
+	position: fixed;
+	bottom:0;
+	left: 0;
+	background-image: url("/about3.png");
+	background-size: contain;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	width: 20vw;
+	height: 100%;
+	position: absolute;
+	z-index: 1;
+	@media (min-width: 900px) {
+		display: block;
 	}
 }

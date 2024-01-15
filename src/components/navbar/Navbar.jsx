@@ -11,14 +11,16 @@ const Navbar = () => {
 			{/* sidebar */}
 			<Sidebar />
 			<div className="wrapper">
-				<div className="empty" tabIndex={0}></div>
-				<motion.span
-					initial={{ opacity: 0, scale: 0.5 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 0.5 }}
-				>
-					GRZEGORZ SYPEK
-				</motion.span>
+				<div className="left">
+					<div className="empty" tabIndex={0}></div>
+					<motion.span
+						initial={{ opacity: 0, scale: 0.5 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.5 }}
+					>
+						GRZEGORZ SYPEK
+					</motion.span>
+				</div>
 				<div className="social">
 					<a href="#">
 						<BsTwitterX size={24} />

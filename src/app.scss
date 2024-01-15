@@ -61,18 +61,44 @@ section#Footer{
   }
 }
 @mixin tablet {
-  @media (min-width: 739px ) and (max-width: 1024px){
+  @media (min-width: 738px ) and (max-width: 1024px){
     @content;
   }
 }
 //1024px
 @mixin desktop {
-  @media (min-width: 1025px) and (max-width: 1366px){
+  @media (min-width: 1024px) and (max-width: 1366px){
     @content;
   }
 }
 @mixin tv {
   @media (min-width: 1366px){
     @content;
+  }
+}
+
+// background-color: #bd8289;
+// border-radius: 5px;
+
+@mixin button-style($background-color, $text-color, $hover-color, $border-color) {
+  display: inline-block;
+  padding: 1.2em 0.8em;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  background-color: $background-color;
+  color: $text-color;
+  transition: background-color 0.3s ease;
+
+
+  @include mobile {
+    font-size: 14px;
+  }
+  &:hover {
+    background-color: $hover-color;  
   }
 }

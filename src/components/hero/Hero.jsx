@@ -49,8 +49,8 @@ const Hero = () => {
 						Web Developer & <br /> Content Creator
 					</motion.h1>
 					<motion.h2 variants={textVariants}>
-						Hi I am Greg Sypek, I design and create web pages and projects with
-						attention to clarity and details.
+						Hi my name is Greg Sypek, I design and create web pages and projects
+						with attention to clarity and details.
 					</motion.h2>
 
 					<motion.div variants={textVariants} className="buttons">
@@ -62,7 +62,7 @@ const Hero = () => {
 				</motion.div>
 			</div>
 			<div></div>
-			<motion.div
+			{/* <motion.div
 				className="slidingTextContainer"
 				variants={sliderVariants}
 				initial="initial"
@@ -71,7 +71,7 @@ const Hero = () => {
 				{skills?.map((skill) => (
 					<strong key={skill}>{skill}</strong>
 				))}
-			</motion.div>
+			</motion.div> */}
 			<div className="imageContainer">
 				<img src="/hero.png" alt="me" />
 			</div>

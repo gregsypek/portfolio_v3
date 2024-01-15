@@ -33,13 +33,13 @@ const Portfolio = () => {
 
 	return (
 		<div className="portfolio" id="Projects">
-			<div className="sectionInfo">
+			{/* <div className="sectionInfo">
 				<hr />
 				<p>
-					{/* Select project from filter list
-					<br /> and check it out! */}{" "}
+					Select project from filter list
+					<br /> and check it out!
 				</p>
-			</div>
+			</div> */}
 			<div className="grid">
 				<div className="projectsHeader" ref={ref}>
 					<div className="headerBox">
