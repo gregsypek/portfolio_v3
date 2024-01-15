@@ -29,6 +29,9 @@ section {
 section:not(#Experience) {
   height: 100vh;
 }
+section#Footer{
+  height: 70vh;
+}
 // #Projects section {
 //   height: 80vh;
 //   scroll-snap-align: center;
@@ -42,5 +45,11 @@ section:not(#Experience) {
   background: linear-gradient(180deg, #0c0c1d, #111132);
 }
 #Experience {
+  background: linear-gradient(180deg, #111132, #0c0c1d);
+}
+#Contact {
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+}
+#Footer {
   background: linear-gradient(180deg, #111132, #0c0c1d);
 }

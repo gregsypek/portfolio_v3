@@ -10,7 +10,10 @@ function SkillBox({ box }) {
 					<div className="year">{box.year}</div>
 					<p>{box.name}</p>
 				</div>
-				<div className="empty"></div>
+				{/* <div className="empty"></div> */}
+				<button className="button-59" role="button">
+					<span className="text"></span>
+				</button>
 			</div>
 			<div className="workBody">
 				<div className="left">{box.desc}</div>
