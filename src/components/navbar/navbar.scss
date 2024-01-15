@@ -10,22 +10,39 @@
 		align-items: center;
 		justify-content: space-between;
 		height: 100%;
-		
-		@include mobile {
-		justify-content: flex-end;
 		padding:20px;
-		}
+		
+		// @include mobile {
+		// justify-content: flex-end;
+		// padding:20px;
+		// }
+
+	.empty{
+		width: calc(50px + 20px)
+	}
+	
 		span {
 			font-weight: bold;
-
+			// margin-left: calc(50px + 20px);	
 			@include mobile {
 				display: none;
 			}
+			@include tv {
+				margin-left: auto;
+				margin-right: auto;	
+			}
+		
 		}
 
 		.social {
 			display: flex;
 			gap: 20px;
+			@include tv {
+				position: fixed;
+				right: 20px;
+				top:40px;
+		}
+			
 		}
 	}
 }

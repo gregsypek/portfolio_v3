@@ -11,6 +11,7 @@ const Navbar = () => {
 			{/* sidebar */}
 			<Sidebar />
 			<div className="wrapper">
+				<div className="empty" tabIndex={0}></div>
 				<motion.span
 					initial={{ opacity: 0, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
