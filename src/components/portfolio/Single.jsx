@@ -17,10 +17,15 @@ function Single({ item }) {
 			<div className="container">
 				{/* <div className="empty"></div> */}
 				<div className="wrapper">
+					<div className="languages">
+						<span>2023</span>
+						<span>React</span>
+						<span>React3</span>
+					</div>
 					<div className="projectBox">
 						<div className="textContainer">
 							<div className="textHeader">
-								<div className="square">React</div>
+								{/* <div className="square">React</div> */}
 								<h4>{item.title}</h4>
 							</div>
 							<p>{item.desc}</p>
@@ -30,13 +35,15 @@ function Single({ item }) {
 							<div className="buttons">
 								<button>
 									{/* <SlSizeActual /> */}
-									<SlSizeFullscreen size={24} />
+									<SlSizeFullscreen size={28} />
 								</button>
+								<div className="vertical-line"></div>
 								<button>
-									<FaArrowLeftLong size={24} />
+									<FaArrowLeftLong size={28} />
 								</button>
-								<button>
-									<FaArrowRightLong size={24} />
+								<div className="vertical-line"></div>
+								<button className="active">
+									<FaArrowRightLong size={28} />
 								</button>
 							</div>
 							<div className="image">

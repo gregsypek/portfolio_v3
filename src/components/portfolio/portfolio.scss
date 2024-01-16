@@ -30,6 +30,7 @@
 		gap: 50px;
 		max-width: 1366px;
 		margin: 0 auto;
+		// background-color: rebeccapurple;
 		// background-color: #0c0c1d;
 		// background-color: rebeccapurple;
 		z-index: 100;
@@ -41,16 +42,23 @@
 		}
 		.headerBox {
 			// border: 1px solid #d3d3d3;
-			aspect-ratio: 2/1;
-			background-color: #0c0c1f;
+			// aspect-ratio: 2/1;
+			// background-color: #0c0c1f;
 			padding: 20px;
-			width: 350px;
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			// width: 350px;
 			height: auto;
 			h1 {
 				text-align: start;
 				color: #d3d3d3;
 				font-size: 67px;
-				width: 200%;
+				// width: 200%;
+			}
+			svg {
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 
@@ -105,72 +113,128 @@
 		width: 100%;
 		height: 100%;
 		display: grid;
-		grid-template-rows: 30vh 1fr;
+		grid-template-rows: 25vh 1fr;
+		// grid-template-rows: 25vh 5vh 1fr;
 		overflow: hidden;
-		// .empty {
-		// 	grid-auto-flow: 1;
-		// 	background-color: rebeccapurple;
-		// }
+		// *{border:0.34px solid white}
 
 		.wrapper {
 			grid-row-start: 2;
 			max-width: 1366px;
 			height: 100%;
-			// height: calc(100% - 200px) ;
 			margin: auto;
-			// background-color: red;
+			padding-bottom: 100px;
+	
+			// padding-top: 50px;
 
-			padding-block: 25px;
-
-			.projectBox {
-				padding: 40px;
-				// margin-bottom:40px;
+			.languages {
+				margin-inline: 40px;
+				margin-bottom: 20px;
 				display: flex;
-				// align-items: center;
+				align-items: center;
+				color: black;
+				font-size: 24px;
+				text-transform: uppercase;
+				span {
+					padding: 10px 20px;
+					background-color: #f9ecdc;
+					position: relative;
+					padding-inline: 40px;
+					&::after {
+						content: "";
+						padding-inline: 20px;
+						position: absolute;
+						top: 0px;
+						bottom: 0px;
+						border-width: 150%;
+						height: 100%;
+						z-index: 2;
+					}
+					&:not(:last-of-type)::after {
+						border-right: 4px solid black;
+					}
+					&:first-of-type {
+						border-top-left-radius: 10px;
+						border-bottom-left-radius: 10px;
+					}
+					&:last-of-type {
+						border-top-right-radius: 10px;
+						border-bottom-right-radius: 10px;
+					}
+				}
+			}
+			.projectBox {
+				padding-inline: 40px;
+				display: flex;
 				justify-content: center;
 				gap: 50px;
-				height: calc(70vh - 40px);
-				// background-color: green;
-				// background: linear-gradient(
-				// 	180deg,
-				// 	#20203e 0%,
-				// 	rgba(32, 32, 62, 0.09) 100%
-				// );
+				// height: calc(70vh - 40px);
+				// max-height: 75vh;
+				// overflow-y: scroll;
 
 				.imageContainer {
 					flex: 2;
 					height: 100%;
 					display: flex;
 					flex-direction: column;
-					// justify-content: space-between;
-					justify-content: flex-start;
-					gap: 50px;
+					justify-content: center;
+					position: relative;
 					.buttons {
 						display: flex;
-						justify-content: flex-end;
+						justify-content: center;
 						gap: 20px;
 						background-color: transparent;
 						// margin-bottom: 20px;
 
 						button {
-							padding: 1em;
+							padding-bottom: 1.5em;
+							
 							aspect-ratio: 1/1;
 							width: 60px;
-							border: 2px solid white;
-							color: white;
+							border: none;
+							// border: 2px solid white;
+							color: #625781;
 							background-color: transparent;
+							&.active {
+								color: #fbebdc;
+							}
+						}
+						.vertical-line {
+							border-right: 4px solid #625781;
+							align-self: center;
+							height: 40px;
+							margin-right: 10px; 
+							transform: translateY(-10px);
 						}
 					}
 					.image {
-						max-height: 500px;						// background-color: red;
-						width: 100%;						// height: 100%;
+						max-height: 500px; // background-color: red;
+						width: 100%; // height: 100%;
 						overflow: hidden;
+						border-radius: 10px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						flex: 1;
 						img {
 							// object-fit: cover;
-							object-fit: contain;							// width: 100%;
+							object-fit: contain; // width: 100%;
 							width: 100%;
 							height: 100%;
+							max-height: 450px;
+
+							// padding-bottom: 20px;
 						}
+					}
+			
+					// border-bottom: 4px solid #625781;
+					&::before {
+						content: "";
+						width: 110px;
+						border-bottom: 4px solid #625781;
+						position: absolute;
+						bottom: -3px;
+						left: -17%;
 					}
 				}
 
@@ -180,43 +244,62 @@
 					flex-direction: column;
 					justify-content: space-between;
 					justify-content: flex-start;
-					gap: 50px;
-					// background-color: red;
-					// height: 100%;
+					gap: 30px;
+		
 					height: 100%;
-
 					// @include mobile {
 					// 	transform: none !important;
 					// }
+
+					position:relative;
+					&:after {
+						content:"";
+						position: absolute;
+						top:42px;
+						right:0;
+						bottom:20px;
+						height: 50%;
+
+						border-right: 4px solid #6f627e;
+						// transform: translateY(40px);
+					}
+
 
 					.textHeader {
 						display: flex;
 						align-items: center;
 						justify-content: flex-start;
-						.square {
-							border: 1px solid white;
-							padding: 0.6em 1em;
-							// padding: 21px 11px;
-							font-size: 24px;
-							color: #8089e6;
-							font-weight: 600;
-						}
+						padding-bottom: 8px;
+						// .square {
+						// 	border: 1px solid white;
+						// 	padding: 0.6em 1em;
+						// 	// padding: 21px 11px;
+						// 	font-size: 24px;
+						// 	color: #8089e6;
+						// 	font-weight: 600;
+						// }
+						border-bottom: 4px solid #6f627e;
+						border-width: 120%;
+						border-bottom-left-radius: 2px;
+						border-bottom-right-radius: 2px;
 						h4 {
-							font-size: 20px;
+							font-size: 26px;
 							letter-spacing: 2px;
 							padding-left: 2px;
+							text-transform: uppercase;
 						}
 					}
 
 					p {
 						color: #e0dfdb;
-						font-size: 18px;
-						line-height: 120%;
+						font-size: 20px;
+						line-height: normal;
+						padding: 15px;
 					}
 					button {
 						background-color: #c9ab91;
 						border: none;
-						margin-top: auto;						// margin-bottom:40px;
+						margin-top: auto; // margin-bottom:40px;
 						align-self: flex-start;
 						border-radius: 10px;
 						padding: 1em 1.2em;
