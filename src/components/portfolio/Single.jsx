@@ -20,7 +20,6 @@ function Single({ item }) {
 					<div className="languages">
 						<span>2023</span>
 						<span>React</span>
-						<span>React3</span>
 					</div>
 					<div className="projectBox">
 						<div className="textContainer">

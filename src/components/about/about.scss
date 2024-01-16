@@ -122,7 +122,7 @@ overflow:hidden;
 	
 	button {
 
-		@include button-style(#645B81, black,  #B7AED9, black);
+		@include button-style( #B7AED9, black,  #645B81, black);
 		grid-row: 7 / span 1;
 		grid-column-start: 7;
 		margin-top: 30px;
