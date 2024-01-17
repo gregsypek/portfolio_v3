@@ -8,11 +8,11 @@ function Experience() {
 	const { width: windowWidth } = useWindowSize();
 
 	const skillColors = [
-		{ background: "#675C83", color: "#F9ECDC", border: "#8089e6" },
+		{ background: "#675C83", color: "#22183f", border: "#8089e6" },
 		{ background: "#272145", color: "#F9ECDC", border: "#8089e6" },
-		{ background: "#10112c", color: "#F9ECDC", border: "#8089e6" },
-		{ background: "#343d9a", color: "#F9ECDC", border: "#8089e6" },
-		{ background: "#593766", color: "#F9ECDC", border: "#8089e6" },
+		{ background: "#5E3F60", color: "#F9ECDC", border: "#8089e6" },
+		{ background: "#BD838B", color: "#22183f", border: "#8089e6" },
+		{ background: "#593766", color: "black", border: "#8089e6" },
 	];
 
 	const getRandomColor = () => {
@@ -40,6 +40,7 @@ function Experience() {
 	useEffect(() => {
 		const newSkillBoxes = experience.map((work, index) => {
 			const { name, desc, year, title, languages, border } = work;
+			console.log("🚀 ~ newSkillBoxes ~ border:", border);
 
 			const languageColors = languages.map(() => getRandomColor());
 
@@ -51,7 +52,7 @@ function Experience() {
 					backgroundColor: languageColors[langIndex].background,
 					column: windowWidth > 1000 ? getRandomColumn(3) : getRandomColumn(2),
 					row: langIndex + 1,
-					border,
+					border: lang.border,
 				})),
 				name,
 				desc,

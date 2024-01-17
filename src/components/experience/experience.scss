@@ -51,9 +51,9 @@
 					border-radius: 5px;
 					@include mobile {
 						font-size: 16px;
-						transform: translateX(-50%);
 					}
 					@include tablet {
+						// transform: translateX(-50%);
 						font-size: 20px;
 					}
 				}
@@ -91,7 +91,7 @@
 			.left {
 				flex: 1;
 				margin-left: 85px;
-				border-left: 3px solid #92888c;
+				// border-left: 3px solid #92888c;
 				padding: 58px 18px 58px 48px;
 
 			
@@ -139,6 +139,7 @@
 					border-width: 1.5px;
 					border-style: solid;
 					width: 120px;
+					// padding:10px;
 					// padding: 1.5px;
 					height: 80px;
 					@include mobile {
@@ -153,6 +154,8 @@
 				
 					}
 					&.button60 {
+						// $custom-color: attr(data-shadow);
+						// @include button60(var($custom-color));
 						@include button60;
 					}
 				}
