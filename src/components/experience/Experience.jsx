@@ -2,26 +2,17 @@ import { useEffect, useState } from "react";
 import "./experience.scss";
 import { experience } from "../../data/experience";
 import SkillBox from "./SkillBox";
-import Line from "../../../public/line.svg";
-import { AiOutlineReload } from "react-icons/ai";
+import { useWindowSize } from "react-use";
 
 function Experience() {
+	const { width: windowWidth } = useWindowSize();
+
 	const skillColors = [
 		{ background: "#675C83", color: "#F9ECDC", border: "#8089e6" },
 		{ background: "#272145", color: "#F9ECDC", border: "#8089e6" },
 		{ background: "#10112c", color: "#F9ECDC", border: "#8089e6" },
 		{ background: "#343d9a", color: "#F9ECDC", border: "#8089e6" },
 		{ background: "#593766", color: "#F9ECDC", border: "#8089e6" },
-		// { background: "#141543", color: "#8089e6", border: "#8089e6" },
-		// { background: "#16173c", color: "#8089e6", border: "#8089e6" },
-		// { background: "#10112c", color: "#8089e6", border: "#8089e6" },
-		// { background: "#0c0d23", color: "#8089e6", border: "#8089e6" },
-		// { background: "#10112E", color: "#8089e6", border: "#8089e6" },
-		// { background: "#BDBDBD", color: "#000000", border: "#000000" },
-		// { background: "#ffe099", color: "#000000", border: "#000000" },
-		// { background: "#10112E", color: "#ffffff", border: "#ffffff" },
-		// { background: "#10112E", color: "#ffffff", border: "#ffffff" },
-		// { background: "#f3958b", color: "#000000", border: "#000000" },
 	];
 
 	const getRandomColor = () => {
@@ -29,15 +20,21 @@ function Experience() {
 		return skillColors[randomIndex];
 	};
 
-	const getRandomColumn = () => {
+	// const getRandomColumn = () => {
+	// 	const randomNumber = Math.random();
+	// 	return randomNumber < 0.33
+	// 		? 1
+	// 		: randomNumber >= 0.33 && randomNumber < 0.66
+	// 		? 2
+	// 		: 3;
+	// };
+	const getRandomColumn = (maxColumn) => {
 		const randomNumber = Math.random();
-		return randomNumber < 0.33
-			? 1
-			: randomNumber >= 0.33 && randomNumber < 0.66
-			? 2
-			: 3;
-	};
+		const columns = Array.from({ length: maxColumn }, (_, index) => index + 1);
 
+		const randomIndex = Math.floor(randomNumber * columns.length);
+		return columns[randomIndex];
+	};
 	const [skillBoxes, setSkillBoxes] = useState([]);
 
 	useEffect(() => {
@@ -52,7 +49,7 @@ function Experience() {
 					name: lang,
 					color: languageColors[langIndex].color,
 					backgroundColor: languageColors[langIndex].background,
-					column: getRandomColumn(),
+					column: windowWidth > 1000 ? getRandomColumn(3) : getRandomColumn(2),
 					row: langIndex + 1,
 					border,
 				})),
@@ -64,7 +61,7 @@ function Experience() {
 		});
 		console.log("🚀 ~ newSkillBoxes ~ newSkillBoxes:", newSkillBoxes);
 		setSkillBoxes(newSkillBoxes);
-	}, []);
+	}, [windowWidth]);
 
 	return (
 		<div className="experience">

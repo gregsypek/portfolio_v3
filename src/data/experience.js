@@ -21,6 +21,6 @@ export const experience = [
 		title: "Fronted Developer",
 		name: "FREELANCE",
 		desc: "At the start of my freelance journey, I developed websites for my first clients, building the foundation for my web development skills.",
-		languages: ["Html", "Css", "JavaScript", "Scss", "Php"],
+		languages: ["JavaScript", "Scss", "Php"],
 	},
 ];

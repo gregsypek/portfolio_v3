@@ -10,17 +10,18 @@
 		padding-inline: 20px;
 		height: auto;
 		padding-block: 80px;
-
+		@include mobile {
+			padding-block: 80px 40px;
+		}
 		h1 {
 			@include header;
 			@include mobile {
-				font-size: 30px;
+				font-size: 40px;
 			}
 			@include tablet {
-				font-size: 48px;
+				font-size: 60px;
 			}
 		}
-
 	}
 	.workBox {
 		display: flex;
@@ -47,12 +48,13 @@
 					justify-content: center;
 
 					color: black;
-					border-radius: 10px;
+					border-radius: 5px;
 					@include mobile {
-						font-size: 20px;
+						font-size: 16px;
+						transform: translateX(-50%);
 					}
 					@include tablet {
-						font-size: 26px;
+						font-size: 20px;
 					}
 				}
 				p {
@@ -65,10 +67,13 @@
 					flex: 1;
 					align-items: center;
 					justify-content: flex-start;
-					margin-left:20px;
+					margin-left: 20px;
 					hr {
-						width: 50%;
+						width: 100%;
 						color: #3b3559;
+						@include mobile {
+							display: none;
+						}
 					}
 				}
 			}
@@ -78,19 +83,54 @@
 			font-size: 20px;
 			gap: 80px;
 
+			@include tablet {
+				gap: 60px;
+		
+			}
+
 			.left {
 				flex: 1;
 				margin-left: 85px;
-				// border-left: 2px solid #d3c1f1;
-				border-left: 3px solid #92888C;
+				border-left: 3px solid #92888c;
 				padding: 58px 18px 58px 48px;
+
+			
+				@include mini {
+					margin-left: 0px;
+					padding: 16px 0 16px 32px;
+					font-size: 16px;
+					text-align: center;
+				}
+				@include mobile {		
+					margin-left: 0px;
+					padding: 16px 0 16px 32px;
+					font-size: 16px;
+					text-align: left;
+				}
+				@include tablet {
+					flex:3;
+					margin-left: 40px;			
+					font-size: 20px;
+				
+				}
 			}
 			.right {
-				flex: 1;
+				// flex: 1;
 				display: grid;
 				grid-gap: 0;
 				grid-template-columns: 120px 120px 120px;
 				grid-template-rows: 80px 80px;
+				@include mobile {
+					grid-template-columns: 80px 80px;
+					grid-template-rows: 60px 60px;
+					display: none;
+				}
+				@include tablet {
+					flex:1;
+					grid-template-columns: 80px 80px;
+					grid-template-rows: 60px 60px;
+			
+				}
 
 				div {
 					display: flex;
@@ -101,7 +141,18 @@
 					width: 120px;
 					// padding: 1.5px;
 					height: 80px;
-					&.button59 {
+					@include mobile {
+						width: 80px;
+						// padding: 1.5px;
+						height: 60px;
+					}
+					@include tablet {
+						width: 80px;
+						// padding: 1.5px;
+						height: 60px;
+				
+					}
+					&.button60 {
 						@include button60;
 					}
 				}
@@ -109,7 +160,4 @@
 		}
 	}
 
-	.empty {
-		@include button59(#8089e6);
-	}
 }
