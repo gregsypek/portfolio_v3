@@ -2,14 +2,21 @@ import { useEffect, useState } from "react";
 import "./experience.scss";
 import { experience } from "../../data/experience";
 import SkillBox from "./SkillBox";
+import Line from "../../../public/line.svg";
+import { AiOutlineReload } from "react-icons/ai";
 
 function Experience() {
 	const skillColors = [
-		{ background: "#141543", color: "#8089e6", border: "#8089e6" },
-		{ background: "#16173c", color: "#8089e6", border: "#8089e6" },
-		{ background: "#10112c", color: "#8089e6", border: "#8089e6" },
-		{ background: "#0c0d23", color: "#8089e6", border: "#8089e6" },
-		{ background: "#10112E", color: "#8089e6", border: "#8089e6" },
+		{ background: "#675C83", color: "#F9ECDC", border: "#8089e6" },
+		{ background: "#272145", color: "#F9ECDC", border: "#8089e6" },
+		{ background: "#10112c", color: "#F9ECDC", border: "#8089e6" },
+		{ background: "#343d9a", color: "#F9ECDC", border: "#8089e6" },
+		{ background: "#593766", color: "#F9ECDC", border: "#8089e6" },
+		// { background: "#141543", color: "#8089e6", border: "#8089e6" },
+		// { background: "#16173c", color: "#8089e6", border: "#8089e6" },
+		// { background: "#10112c", color: "#8089e6", border: "#8089e6" },
+		// { background: "#0c0d23", color: "#8089e6", border: "#8089e6" },
+		// { background: "#10112E", color: "#8089e6", border: "#8089e6" },
 		// { background: "#BDBDBD", color: "#000000", border: "#000000" },
 		// { background: "#ffe099", color: "#000000", border: "#000000" },
 		// { background: "#10112E", color: "#ffffff", border: "#ffffff" },
@@ -63,6 +70,7 @@ function Experience() {
 		<div className="experience">
 			<div className="headerBox">
 				<h1>Skills & Experiences</h1>
+				{/* <img src={Line} alt="line" /> */}
 			</div>
 			{skillBoxes.map((box) => {
 				return <SkillBox box={box} key={box.id} />;

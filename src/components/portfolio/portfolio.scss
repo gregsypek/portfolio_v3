@@ -273,19 +273,19 @@
 					@include tablet2 {
 						order: 2;
 					}
-					&:after {
-						content: "";
-						position: absolute;
-						top: 42px;
-						right: 0;
-						bottom: 20px;
-						height: 50%;
+					// &:after {
+					// 	content: "";
+					// 	position: absolute;
+					// 	top: 42px;
+					// 	right: 0;
+					// 	bottom: 20px;
+					// 	height: 50%;
 
-						border-right: 4px solid #6f627e;
-						@include mobile {
-							display: none;
-						}
-					}
+					// 	border-right: 4px solid #6f627e;
+					// 	@include mobile {
+					// 		display: none;
+					// 	}
+					// }
 
 					.textHeader {
 						display: flex;

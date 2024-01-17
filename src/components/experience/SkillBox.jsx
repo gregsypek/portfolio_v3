@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { AiOutlineReload } from "react-icons/ai";
 
 function SkillBox({ box }) {
 	const rightContainerRef = useRef(null);
@@ -9,10 +10,13 @@ function SkillBox({ box }) {
 					{" "}
 					<div className="year">{box.year}</div>
 					<p>{box.name}</p>
+					<span>
+						<hr color="#92888C" />
+					</span>
 				</div>
 				{/* <div className="empty"></div> */}
-				<button className="button-59" role="button">
-					<span className="text"></span>
+				<button className="empty" role="button">
+					<AiOutlineReload size={26} />
 				</button>
 			</div>
 			<div className="workBody">
@@ -21,12 +25,13 @@ function SkillBox({ box }) {
 					{box.languages.map((lang) => (
 						<div
 							key={lang.name}
+							className="button59"
 							style={{
 								backgroundColor: lang.backgroundColor,
 								color: lang.color,
 								gridColumn: lang.column,
 								gridRow: lang.row,
-								border: lang.border,
+								// border: lang.border,
 							}}
 						>
 							{lang.name}
