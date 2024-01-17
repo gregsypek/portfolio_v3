@@ -128,65 +128,141 @@ section#Footer{
 
 
 
-@mixin button60 {
+// @mixin button60 {
 
-  padding: 10px 40px;
-  font-size: 16px;
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border: 0;
-  z-index: 1;
-  user-select: none;
-  letter-spacing: 1px;
-  white-space: unset;
-  padding: .8rem 1.5rem;
-  text-decoration: none;
-  font-weight: normal;
-  transition: all 0.7s cubic-bezier(0,.8,.26,.99);
-	height: 80px;
-	width: 120px;
+  // padding: 10px 40px;
+  // font-size: 16px;
+  // text-align: center;
+  // display: inline-flex;
+  // align-items: center;
+  // justify-content: center;
+  // position: relative;
+  // border: 0;
+  // z-index: 1;
+  // user-select: none;
+  // letter-spacing: 1px;
+  // white-space: unset;
+  // padding: .8rem 1.5rem;
+  // text-decoration: none;
+  // font-weight: normal;
+  // transition: all 0.7s cubic-bezier(0,.8,.26,.99);
+	// height: 80px;
+	// width: 120px;
 
-  @include tablet2 {
-    font-size: 12px;
-  }
-  @include tablet {
-    width: 80px;
-    // padding: 1.5px;
-    height: 60px;
-  }
+  // @include tablet2 {
+  //   font-size: 12px;
+  // }
+  // @include tablet {
+  //   width: 80px;
+  //   // padding: 1.5px;
+  //   height: 60px;
+  // }
 
-  &:before {
-    position: absolute;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    content: '';
-    transition: .7s cubic-bezier(0,.8,.26,.99);
-    z-index: -1;
-    box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
-    border-radius: 5%;
+  // &:before {
+  //   position: absolute;
+  //   pointer-events: none;
+  //   top: 0;
+  //   left: 0;
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   content: '';
+  //   transition: .7s cubic-bezier(0,.8,.26,.99);
+  //   z-index: -1;
+  //   box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+  //   border-radius: 5%;
   
-  }
-  &:after {
+  // }
+  // &:after {
+  //   position: absolute;
+  //   pointer-events: none;
+  //   top: 0;
+  //   left: 0;
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   content: '';
+  //   box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+  //   transition: .7s cubic-bezier(0,.8,.26,.99);
+  // }  --backgroundColor: rgba(246, 241, 209);
+
+
+  @mixin button60 {
+    position: relative;
+    // display: inline-block;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: inherit;
+  	height: 80px;
+	width: 120px;
+  text-align:center;
+
+  
+ 
+    // padding: 1em 2em;
+    border: 2px solid #0E0019;
+    border-radius: 10px;
+    background: #645981;
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+    @include tablet2 {
+      font-size: 12px;
+    }
+    @include tablet {
+      width: 80px;
+      // padding: 1.5px;
+      height: 60px;
+    }
+  &::before {
     position: absolute;
-    pointer-events: none;
-    top: 0;
-    left: 0;
-    display: block;
+    content: "";
     width: 100%;
     height: 100%;
-    content: '';
-    box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
-    transition: .7s cubic-bezier(0,.8,.26,.99);
-  }
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // background: lighten($shadow, 20%);
+    background: #2b1a3e;
+    border-radius: inherit;
 
-}
+    box-shadow: 0 0 0 0.5px #0E0019;//shadow at the bottom 
+    
+    transform: translate3d(0, 0.35em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  }
+  
+ &:hover {
+  background: lighten(#645981, 80%);
+  }
+  
+  // &:hover::before {
+  //   transform: translate3d(0, 0.75em, -1em);
+  // }
+  
+&:active {
+    transform: translate(0em, 0.75em);
+  }
+  
+  button.big-button:active::before {
+    transform: translate3d(0, 0, -1em);
+  
+    // box-shadow: 0 0 0 2px white, 0 0.25em 0 0 white;
+    // box-shadow: 0 0 0 2px #2b1a3e, 0 0.25em 0 0 #2b1a3e;
+    
+  }
+  }
+// }
 
 
 
