@@ -55,15 +55,15 @@ function Single({ item }) {
 						</div>
 						<div className="imageContainer" ref={ref}>
 							<div className="buttons">
-								<button>
-									{/* <SlSizeActual /> */}
+								{/* <SlSizeActual /> */}
+								{/* <button>
 									<SlSizeFullscreen size={28} />
-								</button>
-								<div className="vertical-line"></div>
+								</button> */}
+								{/* <div className="vertical-line"></div> */}
 								<button onClick={handlePrev} disabled={isSingleImage}>
 									<FaArrowLeftLong size={28} />
 								</button>
-								<div className="vertical-line"></div>
+								{/* <div className="vertical-line"></div> */}
 								<button
 									className="active"
 									onClick={handleNext}
