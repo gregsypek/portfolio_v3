@@ -4,6 +4,19 @@ import "./footer.scss";
 function Footer() {
 	return (
 		<div className="footer">
+			{/* <div className="iconsContainer"> */}
+			<div className="social">
+				<a href="#">
+					<BsTwitterX size={34} />
+				</a>
+				<a href="#">
+					<LuLinkedin size={34} />
+				</a>
+				<a href="#">
+					<LuGithub size={34} />
+				</a>
+			</div>
+			{/* </div> */}
 			<div className="textContainer">
 				<h1>Reach out for more?</h1>
 				<p>
@@ -19,20 +32,9 @@ function Footer() {
 					</button>
 				</div>
 			</div>
-			<div className="iconsContainer">
-				<div className="social">
-					<a href="#">
-						<BsTwitterX size={34} />
-					</a>
-					<a href="#">
-						<LuLinkedin size={34} />
-					</a>
-					<a href="#">
-						<LuGithub size={34} />
-					</a>
-				</div>
-				<p>©{new Date().getFullYear()} Created by gregsypek</p>
-			</div>
+			<p className="copyright">
+				©{new Date().getFullYear()} Created by gregsypek
+			</p>
 		</div>
 	);
 }

@@ -23,19 +23,28 @@
 		gap: 40px;
 
 		@include mobile {
+			flex:1;
 			gap: 20px;
 			text-align: center;
 			align-items: center;
-			margin-top: 70px;
+			margin-top: 60px;
+			line-height: 90%;
 		}
 
 		h1 {
 			font-size: 100px;
 			line-height: 88px;
-			margin-bottom:60px;
 			@include mobile {
-				font-size: 56px;
+				font-size: 46px;
 				line-height: normal;
+			}
+			@include desktop {
+				margin-bottom:60px;
+
+			}
+			@include tv {
+				margin-bottom:60px;
+
 			}
 		}
 
@@ -51,12 +60,15 @@
 				}
 				span {
 					font-size: 20px;
+					@include mobile {
+					font-size: 18px;
+					}
 				}
 				.phoneSvg {
 					svg {
 						@include mobile {
-							width: 60%;
-							height: 60%;
+							width: 50%;
+							height: 50%;
 						}
 					}
 
@@ -80,7 +92,8 @@
 		position: relative;
 		@include mobile {
 			width: 100%;
-			padding: 50px;
+			padding: 30px;
+			flex:2;
 		}
 
 		form {
@@ -109,10 +122,15 @@
 				padding: 20px;
 				border: none;
 				background-color: #8089e6;
+		
 				border-radius: 5px;
 				cursor: pointer;
 				font-weight: 500;
 				font-size: 20px;
+				transition:  background-color .3s ease-in-out;
+				&:hover {
+					background-color: lighten(#8089e6,20%);
+				}
 				@include mobile {
 					padding: 10px;
 				}

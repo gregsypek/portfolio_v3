@@ -331,6 +331,10 @@
 						@include button-style(#b7aed9, black, #645b81, black);
 						width: 50%;
 						margin-top: auto;
+
+						&:hover {
+							background-color: darken(#b7aed9, 10%);
+						}
 					}
 				}
 			}

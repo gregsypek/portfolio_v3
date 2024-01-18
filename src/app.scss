@@ -1,282 +1,261 @@
-
-
-
 html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
 }
 
-*{
-  padding: 0;
-  margin:0;
-  box-sizing: border-box;
-  font-family: "DM Sans", sans-serif;
-  // border:0.5px solid white
-
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "DM Sans", sans-serif;
+	// border:0.5px solid white
 }
 body {
-  background-color: #0c0c1d;
-  color: lightgray;
+	background-color: #0c0c1d;
+	color: lightgray;
 }
 a {
-  text-decoration: none;
-  color:inherit
+	text-decoration: none;
+	color: inherit;
 }
 section {
-
-  scroll-snap-align: center;
+	scroll-snap-align: center;
 }
 
 section:not(#Experience) {
-  height: 100vh;
+	height: 100vh;
 }
-section#Footer{
-  height: 70vh;
-}
-// #Projects section {
-//   height: 80vh;
-//   scroll-snap-align: center;
-// }
+
 #About {
-  background: linear-gradient(180deg, #111132, #0c0c1d);
+	background: linear-gradient(180deg, #111132, #0c0c1d);
 }
 
 #Projects {
-
-  background: linear-gradient(180deg, #0c0c1d, #111132);
+	background: linear-gradient(180deg, #0c0c1d, #111132);
 }
 #Experience {
-  background: linear-gradient(180deg, #111132, #0c0c1d);
+	background: linear-gradient(180deg, #111132, #0c0c1d);
 }
 #Contact {
-  background: linear-gradient(180deg, #0c0c1d, #111132);
+	background: linear-gradient(180deg, #0c0c1d, #111132);
 }
 #Footer {
-  background: linear-gradient(180deg, #111132, #0c0c1d);
+	background: linear-gradient(180deg, #111132, #0c0c1d);
 }
 
 @mixin mini {
-  @media (max-width: 440px){
-    @content;
-  }
+	@media (max-width: 440px) {
+		@content;
+	}
 }
 @mixin mobile {
-  @media (max-width: 738px){
-    @content;
-  }
+	@media (max-width: 738px) {
+		@content;
+	}
 }
 @mixin tablet {
-  @media (min-width: 738px ) and (max-width: 1024px){
-    @content;
-  }
+	@media (min-width: 738px) and (max-width: 1024px) {
+		@content;
+	}
 }
 @mixin tablet2 {
-  @media  (max-width: 1024px){
-    @content;
-  }
+	@media (max-width: 1024px) {
+		@content;
+	}
 }
 //1024px
 @mixin desktop {
-  @media (min-width: 1024px) and (max-width: 1366px){
-    @content;
-  }
+	@media (min-width: 1024px) and (max-width: 1366px) {
+		@content;
+	}
 }
 @mixin tv {
-  @media (min-width: 1366px){
-    @content;
-  }
+	@media (min-width: 1366px) {
+		@content;
+	}
 }
 
 
-// background-color: #bd8289;
-// border-radius: 5px;
 
-@mixin button-style($background-color, $text-color, $hover-color, $border-color) {
-  display: inline-block;
-  padding: 1.2em 0.8em;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border: 1px solid $border-color;
-  border-radius: 10px;
-  background-color: $background-color;
-  color: $text-color;
-  transition: background-color 0.3s ease;
+@mixin button-style(
+	$background-color,
+	$text-color,
+	$hover-color,
+	$border-color
+) {
+	display: inline-block;
+	padding: 1.2em 0.8em;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	border: 1px solid $border-color;
+	border-radius: 10px;
+	background-color: $background-color;
+	color: $text-color;
+	transition: background-color 0.3s ease;
 
-
-  @include mobile {
-    font-size: 14px;
-  }
-  &:hover {
-    background-color: $hover-color;  
-  }
+	@include mobile {
+		font-size: 14px;
+	}
+	&:hover {
+		background-color: $hover-color;
+	}
 }
-
 
 @mixin header {
-  font-size: 88px;
-			@include mobile {
-				font-size: 36px;
-			}
-			@include tablet {
-				font-size: 66px;
-			}
+	font-size: 88px;
+	@include mobile {
+		font-size: 36px;
+	}
+	@include tablet {
+		font-size: 66px;
+	}
 }
-
-
-
 
 // @mixin button60 {
 
-  // padding: 10px 40px;
-  // font-size: 16px;
-  // text-align: center;
-  // display: inline-flex;
-  // align-items: center;
-  // justify-content: center;
-  // position: relative;
-  // border: 0;
-  // z-index: 1;
-  // user-select: none;
-  // letter-spacing: 1px;
-  // white-space: unset;
-  // padding: .8rem 1.5rem;
-  // text-decoration: none;
-  // font-weight: normal;
-  // transition: all 0.7s cubic-bezier(0,.8,.26,.99);
-	// height: 80px;
-	// width: 120px;
+// padding: 10px 40px;
+// font-size: 16px;
+// text-align: center;
+// display: inline-flex;
+// align-items: center;
+// justify-content: center;
+// position: relative;
+// border: 0;
+// z-index: 1;
+// user-select: none;
+// letter-spacing: 1px;
+// white-space: unset;
+// padding: .8rem 1.5rem;
+// text-decoration: none;
+// font-weight: normal;
+// transition: all 0.7s cubic-bezier(0,.8,.26,.99);
+// height: 80px;
+// width: 120px;
 
-  // @include tablet2 {
-  //   font-size: 12px;
-  // }
-  // @include tablet {
-  //   width: 80px;
-  //   // padding: 1.5px;
-  //   height: 60px;
-  // }
-
-  // &:before {
-  //   position: absolute;
-  //   pointer-events: none;
-  //   top: 0;
-  //   left: 0;
-  //   display: block;
-  //   width: 100%;
-  //   height: 100%;
-  //   content: '';
-  //   transition: .7s cubic-bezier(0,.8,.26,.99);
-  //   z-index: -1;
-  //   box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
-  //   border-radius: 5%;
-  
-  // }
-  // &:after {
-  //   position: absolute;
-  //   pointer-events: none;
-  //   top: 0;
-  //   left: 0;
-  //   display: block;
-  //   width: 100%;
-  //   height: 100%;
-  //   content: '';
-  //   box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
-  //   transition: .7s cubic-bezier(0,.8,.26,.99);
-  // }  --backgroundColor: rgba(246, 241, 209);
-
-
-  @mixin button60 {
-    position: relative;
-    // display: inline-block;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-family: inherit;
-  	height: 80px;
-	width: 120px;
-  text-align:center;
-
-  
- 
-    // padding: 1em 2em;
-    border: 2px solid #0E0019;
-    border-radius: 10px;
-    background: #645981;
-    transform-style: preserve-3d;
-    transition: all 175ms cubic-bezier(0, 0, 1, 1);
-    @include tablet2 {
-      font-size: 12px;
-    }
-    @include tablet {
-      width: 80px;
-      // padding: 1.5px;
-      height: 60px;
-    }
-  &::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    // background: lighten($shadow, 20%);
-    background: #2b1a3e;
-    border-radius: inherit;
-
-    box-shadow: 0 0 0 0.5px #0E0019;//shadow at the bottom 
-    
-    transform: translate3d(0, 0.35em, -1em);
-    transition: all 175ms cubic-bezier(0, 0, 1, 1);
-  }
-  
- &:hover {
-  background: lighten(#645981, 80%);
-  }
-  
-  // &:hover::before {
-  //   transform: translate3d(0, 0.75em, -1em);
-  // }
-  
-&:active {
-    transform: translate(0em, 0.75em);
-  }
-  
-  button.big-button:active::before {
-    transform: translate3d(0, 0, -1em);
-  
-    // box-shadow: 0 0 0 2px white, 0 0.25em 0 0 white;
-    // box-shadow: 0 0 0 2px #2b1a3e, 0 0.25em 0 0 #2b1a3e;
-    
-  }
-  }
+// @include tablet2 {
+//   font-size: 12px;
+// }
+// @include tablet {
+//   width: 80px;
+//   // padding: 1.5px;
+//   height: 60px;
 // }
 
+// &:before {
+//   position: absolute;
+//   pointer-events: none;
+//   top: 0;
+//   left: 0;
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   content: '';
+//   transition: .7s cubic-bezier(0,.8,.26,.99);
+//   z-index: -1;
+//   box-shadow: 0 -4px rgb(0 0 0 / 50%) inset, 0 4px rgb(255 255 255 / 20%) inset, -4px 0 rgb(255 255 255 / 20%) inset, 4px 0 rgb(0 0 0 / 50%) inset;
+//   border-radius: 5%;
 
+// }
+// &:after {
+//   position: absolute;
+//   pointer-events: none;
+//   top: 0;
+//   left: 0;
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   content: '';
+//   box-shadow: 0 4px 0 0 rgb(0 0 0 / 15%);
+//   transition: .7s cubic-bezier(0,.8,.26,.99);
+// }  --backgroundColor: rgba(246, 241, 209);
 
+@mixin button60 {
+	position: relative;
+	// display: inline-block;
+	// display: flex;
+	// align-items: center;
+	// justify-content: center;
+	cursor: pointer;
+	outline: none;
+	border: 0;
+	vertical-align: middle;
+	text-decoration: none;
+	font-size: 18px;
+	color: black;
+	font-weight: 500;
+	text-transform: uppercase;
+	font-family: inherit;
+	height: 80px;
+	width: 120px;
+	text-align: center;
+
+	// padding: 1em 2em;
+	border: 2px solid #0e0019;
+	border-radius: 10px;
+	background: #645981;
+	transform-style: preserve-3d;
+	transition: all 175ms cubic-bezier(0, 0, 1, 1);
+	@include tablet2 {
+		font-size: 12px;
+	}
+	@include tablet {
+		width: 80px;
+		// padding: 1.5px;
+		height: 60px;
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		// background: lighten($shadow, 20%);
+		background: #2b1a3e;
+		border-radius: inherit;
+
+		box-shadow: 0 0 0 0.5px #0e0019; //shadow at the bottom
+
+		transform: translate3d(0, 0.35em, -1em);
+		transition: all 175ms cubic-bezier(0, 0, 1, 1);
+	}
+
+	&:hover {
+		background: lighten(#645981, 80%);
+	}
+
+	// &:hover::before {
+	//   transform: translate3d(0, 0.75em, -1em);
+	// }
+
+	&:active {
+		transform: translate(0em, 0.75em);
+	}
+
+	button.big-button:active::before {
+		transform: translate3d(0, 0, -1em);
+
+		// box-shadow: 0 0 0 2px white, 0 0.25em 0 0 white;
+		// box-shadow: 0 0 0 2px #2b1a3e, 0 0.25em 0 0 #2b1a3e;
+	}
+}
+// }
 
 ::-webkit-scrollbar {
-	width: 12px;               /* width of the entire scrollbar */
+	width: 12px; /* width of the entire scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-	background: transparent;        /* color of the tracking area */
+	background: transparent; /* color of the tracking area */
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: transparent;    /* color of the scroll thumb */
-	border-radius: 5px;       /* roundness of the scroll thumb */
-	border: 4px solid #6F627E;  /* creates padding around scroll thumb */
+	background-color: transparent; /* color of the scroll thumb */
+	border-radius: 5px; /* roundness of the scroll thumb */
+	border: 4px solid #6f627e; /* creates padding around scroll thumb */
 }
