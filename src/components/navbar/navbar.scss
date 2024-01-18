@@ -16,17 +16,18 @@
 			gap: 20px;
 			justify-content: flex-start;
 			@include desktop {
-				justify-content: flex-end;
 				flex: 1;
 				margin-right: 20px;
 			}
 			@include tv {
-			display: none;
 				flex: 1;
 			}
+
 			.empty {
 				width: calc(50px + 20px);
 				@include tv {
+				}
+				@media (min-width: 1482px) {
 					display: none;
 				}
 			}
@@ -40,10 +41,9 @@
 		.social {
 			display: flex;
 			gap: 20px;
+			justify-content: flex-end;
+			justify-self: flex-end;
 			@include tv {
-				position: fixed;
-				right: 20px;
-				top: 40px;
 			}
 		}
 	}
