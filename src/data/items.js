@@ -11,6 +11,9 @@ export const items = [
 			"./projects/bakery6.png",
 		],
 		desc: "Intuitive and modern web-based bakery management system. Technologies: React, Styled Components, React Router, React icons, React Query, React Hot Toast, React Hook Form, reCharts, React Error Boundary. The app gives a bakery owner the ability to manage all aspects of orders and maintaining products plus app settings. The dashboard provides the user an overview of orders using charts including sales, category, progress rate, and orders activities for the current day.",
+		tags: ["React", "React Router", "Styled Components", "React Query", "2023"],
+		live: "https://bakery-corp.netlify.app/",
+		github: "https://github.com/gregsypek/bakery",
 	},
 	{
 		id: 2,
@@ -24,6 +27,9 @@ export const items = [
 			"./projects/pizzarella6.png",
 		],
 		desc: "React Application with React Router, Tailwind CSS and Redux. Menu load from an API. State is manage with Redux Toolkit. I use Redux Thunks, useFetcher, loaders and actions",
+		tags: ["React", "React Router", "Tailwind", "Redux", "2023"],
+		live: "https://pizzarella.netlify.app/",
+		github: "https://github.com/gregsypek/pizzarella",
 	},
 	{
 		id: 3,
@@ -34,6 +40,9 @@ export const items = [
 			"./projects/miodek3.png",
 		],
 		desc: "Full-stack React E-commerce application with integrated Stripe payment processing. Boasting a modern design and comprehensive functionality, it was built using Next.js and Sanity technologies. The Stripe integration facilitates online payments, and the entire application is styled using the Tailwind CSS library.",
+		tags: ["React", "Next", "Tailwind", "Stripe", "Sanity", "2023"],
+		live: "https://miodek4.vercel.app/",
+		github: "https://github.com/gregsypek/miodek4",
 	},
 	{
 		id: 4,
@@ -46,6 +55,9 @@ export const items = [
 			"./projects/schody5.png",
 		],
 		desc: "I have created a web application for a client—an uncomplicated, fully responsive website built on WordPress. It does not rely on external themes, ensuring exceptional speed and cleanliness while featuring dynamic content sourced from a MySQL database. I have created a similar website using Node.js. You can find the corresponding link on the GitHub icon.",
+		tags: ["Wordpress", "PHP", "MySQL", "Scss", "2022"],
+		live: "https://gregsypek.github.io/schodystaticword/index.html",
+		github: "https://github.com/gregsypek/schodystaticword/",
 	},
 	{
 		id: 5,
@@ -58,6 +70,9 @@ export const items = [
 			"./projects/mjurkowska5.png",
 		],
 		desc: "Website made for fictional company. Fully responsive with an easy to manage CSS variables structure. Languages: HTML, Vanilia Js, CSS",
+		tags: ["JavaScript", "HTML", "CSS", "2022"],
+		live: "https://gregsypek.github.io/MJurkowska/",
+		github: "https://github.com/gregsypek/MJurkowska",
 	},
 	{
 		id: 6,
@@ -74,5 +89,8 @@ export const items = [
 			"./projects/ursus9.png",
 		],
 		desc: "Full Stack App with a login and register option created only for learning purposes and of course for fun. All pictures and information I copied from the original URSUS website. For authentication, I use JSON Web Tokens. The backend is built in Node.js with express and mongoose. Data is sent to my MongoDB account. I handle errors and display them by vuetify template v-error. App includes three roles: admin editor and user with different privilege. Languages: Vue, Node Express, MongoDB, Vuex, Bootstrap, Vuetify",
+		tags: ["Vue", "Node", "Express", "MongoDB", "Bootstrap", "Vuex", "2022"],
+		live: "https://ursus-api.onrender.com/",
+		github: "https://github.com/gregsypek/ursus2",
 	},
 ];

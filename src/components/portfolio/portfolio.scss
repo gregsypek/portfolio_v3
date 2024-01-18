@@ -129,11 +129,11 @@
 				display: flex;
 				align-items: center;
 				color: black;
-				font-size: 24px;
+				font-size: 20px;
 				text-transform: uppercase;
 				span {
-					padding: 0.5em 1em;
-					background-color: #f9ecdc;
+					padding: 0.2em 0.8em;
+					background-color: #d9cab7;
 					position: relative;
 					padding-inline: 2em;
 					@include mobile {
@@ -199,13 +199,18 @@
 							width: 60px;
 							border: none;
 							color: #625781;
+							cursor: pointer;
 							background-color: transparent;
 
 							@include tablet2 {
 								width: 40px;
 							}
-							&.active {
+							&:hover {
 								color: #fbebdc;
+							}
+							&:disabled {
+								opacity: 0.5;
+								cursor: not-allowed;
 							}
 						}
 						.vertical-line {
@@ -289,7 +294,7 @@
 
 					.textHeader {
 						display: flex;
-						align-items: flex-start;
+						// align-items: flex-start;
 						justify-content: space-between;
 
 						padding-bottom: 8px;
@@ -299,13 +304,24 @@
 						border-width: 120%;
 						border-bottom-left-radius: 2px;
 						border-bottom-right-radius: 2px;
-						h4 {
-							font-size: 26px;
-							letter-spacing: 2px;
-							padding-left: 2px;
-							text-transform: uppercase;
-							@include tablet2 {
-								font-size: 20px;
+						.title {
+							display: flex;
+							justify-content: space-between;
+							align-items: center;
+							h4 {
+								font-size: 26px;
+								letter-spacing: 2px;
+								padding-left: 2px;
+								text-transform: uppercase;
+								@include tablet2 {
+									font-size: 20px;
+								}
+							}
+							span {
+								cursor: pointer;
+								&:hover svg {
+									color: #fbebdc !important;
+								}
 							}
 						}
 					}
