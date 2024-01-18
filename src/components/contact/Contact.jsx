@@ -29,6 +29,7 @@ const variants = {
 
 const Contact = () => {
 	const ref = useRef();
+	const numberRef = useRef();
 	const formRef = useRef();
 	const [error, setError] = useState(false);
 	const [success, setSuccess] = useState(false);
@@ -56,6 +57,10 @@ const Contact = () => {
 					setError(true);
 				}
 			);
+	};
+
+	const showNumber = () => {
+		numberRef.current.innerText = "+48 504522440";
 	};
 
 	return (
@@ -143,7 +148,7 @@ const Contact = () => {
 								</g>
 							</svg>
 						</motion.div>
-						<span>hello@react.dev</span>
+						<span>greg.sypek@gmail.com</span>
 					</div>
 				</motion.div>
 				<motion.div className="item" variants={variants}>
@@ -233,7 +238,7 @@ const Contact = () => {
 								</g>
 							</svg>
 						</motion.div>
-						<span>Hello street New York</span>
+						<span>Mielec, 39-300 Mielec</span>
 					</div>
 				</motion.div>
 				<motion.div className="item" variants={variants}>
@@ -311,7 +316,13 @@ const Contact = () => {
 								</g>
 							</svg>
 						</motion.div>
-						<span>+1 234 5678</span>
+						<span
+							ref={numberRef}
+							onClick={showNumber}
+							style={{ cursor: "pointer" }}
+						>
+							click to show
+						</span>
 					</div>
 				</motion.div>
 			</motion.div>

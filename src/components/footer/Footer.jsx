@@ -6,13 +6,13 @@ function Footer() {
 		<div className="footer">
 			{/* <div className="iconsContainer"> */}
 			<div className="social">
-				<a href="#">
+				<a href="https://twitter.com/gregsypek">
 					<BsTwitterX size={34} />
 				</a>
-				<a href="#">
+				<a href="https://www.linkedin.com/in/grzegorz-sypek-47472a194/">
 					<LuLinkedin size={34} />
 				</a>
-				<a href="#">
+				<a href="https://github.com/gregsypek">
 					<LuGithub size={34} />
 				</a>
 			</div>
@@ -24,12 +24,24 @@ function Footer() {
 					You can also check my CV below.
 				</p>
 				<div className="buttons">
-					<button className="pdf">
-						download pdf <span></span>
-					</button>
-					<button className="html">
-						open as html page <span></span>
-					</button>
+					<a
+						href="/cv/CV_GRZEGORZ_SYPEK_P_2024.pdf"
+						download="CV_GRZEGORZ_SYPEK_P_2024.pdf"
+						rel="noopener noreferrer"
+					>
+						<button className="pdf">
+							download pdf <span></span>
+						</button>
+					</a>
+					<a
+						href="https://gregsypek.github.io/CV"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<button className="html">
+							open as html page <span></span>
+						</button>
+					</a>
 				</div>
 			</div>
 			<p className="copyright">

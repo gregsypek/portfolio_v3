@@ -1,7 +1,6 @@
 import "./hero.scss";
 import { motion } from "framer-motion";
-
-const skills = ["React ", "Node ", "Vue ", "Javascript"];
+import { Link as ScrollLink } from "react-scroll";
 
 const textVariants = {
 	initial: {
@@ -55,9 +54,15 @@ const Hero = () => {
 
 					<motion.div variants={textVariants} className="buttons">
 						<motion.button variants={textVariants}>
-							See the Latest Works
+							<ScrollLink to="Projects" smooth={true} duration={300}>
+								See the Latest Works
+							</ScrollLink>
 						</motion.button>
-						<motion.button variants={textVariants}>Contact Me</motion.button>
+						<motion.button variants={textVariants}>
+							<ScrollLink to="Contact" smooth={true} duration={500}>
+								Contact Me
+							</ScrollLink>
+						</motion.button>
 					</motion.div>
 				</motion.div>
 			</div>

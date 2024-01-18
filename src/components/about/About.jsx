@@ -3,6 +3,7 @@ import about4 from "/about4.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useWindowSize } from "react-use";
 import { useRef } from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 function About() {
 	const ref = useRef();
@@ -67,10 +68,18 @@ function About() {
 					<motion.hr variants={lineVariants}></motion.hr>
 				</motion.p>
 				<motion.p className="about__text about__text--3">
-					I am willing <span>to cooperate </span>and continue my adventure with
-					IT and develop further in this direction.
+					Currently I am looking a job as a web developer. I am confident that
+					my skills and dedication make me an asset to any team. I am willing
+					<span> to cooperate </span>and continue my adventure with IT and
+					develop further in this direction.
+					{/* I am willing <span>to cooperate </span>and continue my adventure with
+					IT and develop further in this direction. */}
 				</motion.p>
-				<motion.button className="about__btn btn">Contact</motion.button>
+				<motion.button className="about__btn btn">
+					<ScrollLink to="Contact" smooth={true} duration={500}>
+						Contact
+					</ScrollLink>
+				</motion.button>
 			</motion.div>
 			<motion.div className="mountains"></motion.div>
 		</>
