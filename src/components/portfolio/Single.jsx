@@ -1,21 +1,23 @@
 import { useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
-import { SlSizeFullscreen } from "react-icons/sl";
+// import { SlSizeFullscreen } from "react-icons/sl";
 import { LuGithub } from "react-icons/lu";
 function Single({ item }) {
 	console.log("🚀 ~ Single ~ item:", item);
 	const ref = useRef();
 
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
-	const handleNext = () => {
+
+	const handleNext = useCallback(() => {
 		setCurrentImageIndex((prevIndex) => (prevIndex + 1) % item.images.length);
-	};
-	const handlePrev = () => {
+	}, [item.images.length]);
+
+	const handlePrev = useCallback(() => {
 		setCurrentImageIndex(
 			(prevIndex) => (prevIndex - 1 + item.images.length) % item.images.length
 		);
-	};
+	}, [item.images.length]);
 
 	const isSingleImage = item.images.length <= 1;
 
@@ -24,6 +26,25 @@ function Single({ item }) {
 	});
 
 	const y = useTransform(scrollYProgress, [0, 1], [-5, 30]);
+
+	const handleKeyDown = useCallback(
+		(event) => {
+			if (event.key === "ArrowLeft") {
+				handlePrev();
+			} else if (event.key === "ArrowRight") {
+				handleNext();
+			}
+		},
+		[handleNext, handlePrev]
+	);
+
+	useEffect(() => {
+		window.addEventListener("keydown", handleKeyDown);
+
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown);
+		};
+	}, [handleKeyDown]);
 
 	return (
 		<section>

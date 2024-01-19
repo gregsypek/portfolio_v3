@@ -68,8 +68,9 @@ function About() {
 					<motion.hr variants={lineVariants}></motion.hr>
 				</motion.p>
 				<motion.p className="about__text about__text--3">
-					Currently I am looking a job as a web developer. I am confident that
-					my skills and dedication make me an asset to any team. I am willing
+					Currently I am looking for a job as a web developer. I am confident
+					that my skills and dedication make me an asset to any team. I am
+					willing
 					<span> to cooperate </span>and continue my adventure with IT and
 					develop further in this direction.
 					{/* I am willing <span>to cooperate </span>and continue my adventure with
