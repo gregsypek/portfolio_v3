@@ -18,13 +18,18 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
-section {
-	scroll-snap-align: center;
-	min-height: 100vh;
-}
+// section {
+// 	scroll-snap-align: center;
+// 	min-height: 100vh;
+// }
 // #Homepage{
 // 	position:relative;
 // }
+section:not(:has(.content-exceeds-100vh)) {
+  scroll-snap-align: center;
+  min-height: 100vh;
+  transform: none !important;
+}
 
 #About {
 	background: linear-gradient(180deg, #111132, #0c0c1d);
