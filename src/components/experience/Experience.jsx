@@ -40,7 +40,6 @@ function Experience() {
 	useEffect(() => {
 		const newSkillBoxes = experience.map((work, index) => {
 			const { name, desc, year, title, languages, border } = work;
-			console.log("🚀 ~ newSkillBoxes ~ border:", border);
 
 			const languageColors = languages.map(() => getRandomColor());
 
@@ -60,9 +59,8 @@ function Experience() {
 				title,
 			};
 		});
-		console.log("🚀 ~ newSkillBoxes ~ newSkillBoxes:", newSkillBoxes);
 		setSkillBoxes(newSkillBoxes);
-	}, [windowWidth]);
+	}, []);
 
 	return (
 		<div className="experience">

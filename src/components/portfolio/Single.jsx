@@ -4,7 +4,6 @@ import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 // import { SlSizeFullscreen } from "react-icons/sl";
 import { LuGithub } from "react-icons/lu";
 function Single({ item }) {
-	console.log("🚀 ~ Single ~ item:", item);
 	const ref = useRef();
 
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);

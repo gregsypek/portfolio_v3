@@ -35,31 +35,43 @@
 		z-index: 100;
 		padding-bottom: 15px;
 		@include mobile {
-			padding-top: 60px;
+			// background-color: red;
+			padding-top: 20px;
+			// padding-bottom: calc(100vh + 60px);
 		}
 		@media (min-width: 900px) {
 			flex-direction: row;
 			justify-content: space-between;
 		}
 		.headerBox {
-			padding: 20px;
+			// padding: 20px;
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
+	
 			height: auto;
 			width: 100%;
-			@include tablet2 {
+			@include mobile {
+				justify-content: flex-end;
+			}
+			@include tablet {
+				justify-content: center;
 			}
 			@include tv {
 				gap: 1px;
+
 			}
 			@media (min-width: 1482px) {
 				justify-content: flex-start;
 			}
 			h1 {
+				padding:10px;
+
 				@include header;
 				@include mobile {
 					font-size: 28px;
+					text-align: center;
+					width: 80%;
 				}
 				@include tablet {
 					font-size: 48px;
@@ -111,6 +123,9 @@
 		display: grid;
 		grid-template-rows: 20vh 1fr;
 		overflow: hidden;
+		@include mobile {
+			grid-template-rows: 15vh 1fr;
+		}
 		@include tablet {
 			grid-template-rows: 13vh 1fr;
 		}
@@ -124,7 +139,9 @@
 			display: flex;
     flex-direction: column;
     gap: 20px;
-
+		@include mobile {
+			gap:5px;
+		}
 			.languages {
 				// margin-inline: 40px;
 				margin-bottom: 60px;
@@ -147,6 +164,7 @@
 					padding-inline: 2em;
 					@include mobile {
 						font-size: 14px;
+						padding-inline: 4px;
 					}
 					@include tablet {
 						font-size: 18px;
@@ -188,7 +206,8 @@
 				justify-content: center;
 				gap: 50px;
 
-				height: calc(100% + 100px - 25vh);
+				// height: calc(100% + 100px - 25vh);
+				height: calc(100% + 100px - 15vh);
 				@include tablet2 {
 					flex-direction: column;
 					gap: 15px;
@@ -270,7 +289,8 @@
 								object-fit: cover;
 								border-radius: 2px;
 								width: 90vw;
-								max-height: 300px;
+								// max-height: 300px;
+								max-height: 33vh;
 							}
 							@include tablet {
 								height: 100%;
@@ -300,11 +320,15 @@
 					grid-template-rows: 40px 1fr 70px;
 					gap: 30px;
 					// height: 100%;
+
+					@include mobile {
+						transform: none !important;
+					}
 					@include tablet {
 						transform: none !important;
 					}
 					@include tablet2 {
-						gap: 10px;
+						gap: 12px;
 					}
 					position: relative;
 

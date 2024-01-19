@@ -51,23 +51,23 @@ function About() {
 						alt="mauntain trail sign"
 					/>
 				</motion.div>
-				<motion.p className="about__text about__text--1">
+				<motion.div className="about__text about__text--1">
 					I am a frontend developer with five years of programming experience,
 					specializing in React, React Native, and Vue.js. Lastly I have been
 					working as application programmer, using React Native, React and
 					Typescript on application for enginerrs, and as junior developer in
 					Rzeszów on a big e-commerce app.
 					<motion.hr variants={lineVariants}></motion.hr>
-				</motion.p>
+				</motion.div>
 
-				<motion.p className="about__text about__text--2">
+				<motion.div className="about__text about__text--2">
 					I live in a small town of Mielec in Poland. I am a self-taught learner
 					who is passionate about computers and coding. In my spare time I love
 					listening to progressive rock, reading books and hiking in the
 					mountains.
 					<motion.hr variants={lineVariants}></motion.hr>
-				</motion.p>
-				<motion.p className="about__text about__text--3">
+				</motion.div>
+				<motion.div className="about__text about__text--3">
 					Currently I am looking for a job as a web developer. I am confident
 					that my skills and dedication make me an asset to any team. I am
 					willing
@@ -75,7 +75,7 @@ function About() {
 					develop further in this direction.
 					{/* I am willing <span>to cooperate </span>and continue my adventure with
 					IT and develop further in this direction. */}
-				</motion.p>
+				</motion.div>
 				<motion.button className="about__btn btn">
 					<ScrollLink to="Contact" smooth={true} duration={500}>
 						Contact

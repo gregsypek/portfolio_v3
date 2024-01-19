@@ -31,6 +31,9 @@ overflow:hidden;
 		aspect-ratio: 1/1;
 		height: 100%;
 		border: 2px solid white;
+		@include tablet2 {
+			transform:translateY(-50px) !important;
+		}
 		@media (min-width: 1020px) {
 			height: auto;
 			}
@@ -138,7 +141,7 @@ overflow:hidden;
 			color: black;
 		}
 	}
-	p {
+	div {
 		color:#D3D3D3;
 		font-size: 18px;
 		font-weight: 500;
