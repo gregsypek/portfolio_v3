@@ -73,9 +73,9 @@ section {
 
 				@include header;
 				@include mobile {
-					font-size: 28px;
+					font-size: 36px;
 					text-align: center;
-					width: 80%;
+					width: 100%;
 				}
 				@include tablet {
 					font-size: 48px;

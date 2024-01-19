@@ -12,6 +12,10 @@
 	grid-template-columns: repeat(14, 1fr);
 	grid-template-rows: 180px 180px repeat(2, auto);
 
+	@include mobile {
+		grid-template-rows: 80px 130px repeat(2, auto);
+	}
+
 	@media (min-width: 900px) {
 		grid-template-rows: 250px 250px repeat(1, minmax(auto, 1fr) 150px);
 	}
@@ -45,6 +49,13 @@
 			font-weight: 600;
 			width: 50%;
 			transform: translateX(-20%);
+			@include mobile {
+				width: 300%;
+				transform: translateX(55%);
+				font-size: 36px;
+				position:fixed;
+			}
+
 			@media (min-width: 1100px) {
 				font-size: 96px;
 			}
@@ -57,6 +68,10 @@
 			justify-content: center;
 			align-items: center;
 			position: relative;
+			@include mobile {
+				grid-column: 2/span 1;
+				width: 100%;
+			}
 
 			img {
 				display: none;
@@ -102,6 +117,12 @@
 		&--1 {
 			grid-column: 2/ -2;
 			grid-row: 2 / span 2;
+			
+			@include mobile {
+				grid-column: 1/ -2;
+				grid-row: 2 / span 2;
+		
+			}
 			@media (min-width: 900px) {
 				grid-column: 6 / span 9;
 				grid-row-start: 1;
@@ -110,12 +131,17 @@
 		&--2 {
 			grid-column: 2/ -2;
 			grid-row-start: 5;
+		
 			@media (min-width: 900px) {
 				grid-column: 9 / span 6;
 				grid-row-start: 2;
 			}
 		}
 		&--3 {
+			@include mobile {
+				grid-column: 2/ -2;
+		
+			}
 			grid-column: 2/ -2;
 			grid-row-start: 6;
 			@media (min-width: 900px) {
@@ -132,6 +158,12 @@
 		margin-top: 30px;
 		align-self: baseline;
 		font-weight: 500;
+
+		@include tablet2 {
+			// grid-column: 2/-2;
+			max-width: 40vw;
+			grid-column-start: -3;
+		}
 		@media (min-width: 900px) {
 			grid-column: 12 / span 3;
 			grid-row-start: 4;
@@ -149,11 +181,15 @@
 		letter-spacing: 0.5px;
 		@include mobile {
 			font-size: 14px;
+			margin-top: 0;
 		}
 		hr {
 			margin-top: 30px;
 			border: none;
 			border-top: 0.5px solid gray;
+			@include mobile {
+				border-top: 0.5px solid transparent;
+			}
 		}
 
 		@media (min-width: 600px) {

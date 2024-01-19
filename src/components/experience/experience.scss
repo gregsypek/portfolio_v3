@@ -3,28 +3,42 @@
 .experience {
 
 	height: 100%;
-	height: 100%;
+	min-height: 100vh;
+	width: 100%;
 	margin: 0 auto;
 	max-width: 1366px;
 	padding-inline: 40px;
+
+	display: grid;
+	grid-template-rows: 150px repeat(3, minmax(1fr, auto));
 	@include mobile {
 		padding-inline: 20px;
 		transform: none !important;
+
 	}
 	.headerBox {
 		padding-inline: 20px;
+		margin-bottom: 80px;
 		height: auto;
-		padding-block: 80px;
+		// padding-block: 80px;
 		@include mobile {
-			padding-block: 80px 40px;
+			padding-block: 20px 40px;
+			margin-bottom: 0px;
 		}
 		h1 {
 			@include header;
+			text-align: center;
+		
+			
 			@include mobile {
-				font-size: 40px;
+				font-size: 36px;
 			}
 			@include tablet {
 				font-size: 60px;
+				// text-align: center;
+			}
+			@media (min-width: 1482px) {
+				text-align:left;
 			}
 		}
 	}
@@ -104,16 +118,21 @@
 			
 				// 	text-align: center;
 				// }
+				// @include mini {
+
+				// 	font-size: 14px;
+				// }
 				@include mobile {		
 					margin-left: 0px;
-					padding: 16px 0 16px 32px;
-					font-size: 14px;
+					padding: 24px 0 12px 10px;
 					text-align: left;
+					font-size: 16px;
 				}
 				@include tablet {
 					flex:3;
 					margin-left: 40px;			
-					font-size: 20px;
+					font-size: 18px;
+					padding: 22px 0 12px 10px;
 				
 				}
 			}

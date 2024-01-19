@@ -65,7 +65,7 @@ function Experience() {
 	return (
 		<div className="experience">
 			<div className="headerBox">
-				<h1>Skills & Experiences</h1>
+				<h1>Experiences{windowWidth < 800 && <br />} & Skills</h1>
 				{/* <img src={Line} alt="line" /> */}
 			</div>
 			{skillBoxes.map((box) => {

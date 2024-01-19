@@ -66,7 +66,7 @@ const Hero = () => {
 					</motion.div>
 				</motion.div>
 			</div>
-			<div></div>
+			{/* <div></div> */}
 			{/* <motion.div
 				className="slidingTextContainer"
 				variants={sliderVariants}
