@@ -43,8 +43,10 @@
 			gap: 20px;
 			justify-content: flex-end;
 			justify-self: flex-end;
-			@include tv {
-			}
+			// background-color: red;
+		svg:hover{
+			color:#6F627E;
+		}
 		}
 	}
 }
