@@ -39,7 +39,7 @@ function Experience() {
 
 	useEffect(() => {
 		const newSkillBoxes = experience.map((work, index) => {
-			const { name, desc, year, title, languages, border } = work;
+			const { name, desc, year, title, languages } = work;
 
 			const languageColors = languages.map(() => getRandomColor());
 
@@ -51,7 +51,7 @@ function Experience() {
 					backgroundColor: languageColors[langIndex].background,
 					column: windowWidth > 1000 ? getRandomColumn(3) : getRandomColumn(2),
 					row: langIndex + 1,
-					border: lang.border,
+					// border: lang.border,
 				})),
 				name,
 				desc,

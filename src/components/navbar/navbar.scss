@@ -2,6 +2,9 @@
 
 .navbar {
 	height: 100px;
+	@include mobile {
+		height: 90px;
+	}
 	.wrapper {
 		max-width: 1366px;
 		margin: auto;
@@ -10,6 +13,9 @@
 		justify-content: space-between;
 		height: 100%;
 		padding: 20px;
+		@include mobile {
+			padding: 10px;
+		}
 
 		.left {
 			display: flex;

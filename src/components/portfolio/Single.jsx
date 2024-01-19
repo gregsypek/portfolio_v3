@@ -1,4 +1,4 @@
-import { useScroll, useTransform } from "framer-motion";
+// import { useScroll, useTransform } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 // import { SlSizeFullscreen } from "react-icons/sl";
@@ -20,11 +20,11 @@ function Single({ item }) {
 
 	const isSingleImage = item.images.length <= 1;
 
-	const { scrollYProgress } = useScroll({
-		target: ref,
-	});
+	// const { scrollYProgress } = useScroll({
+	// 	target: ref,
+	// });
 
-	const y = useTransform(scrollYProgress, [0, 1], [-5, 30]);
+	// const y = useTransform(scrollYProgress, [0, 1], [-5, 30]);
 
 	const handleKeyDown = useCallback(
 		(event) => {

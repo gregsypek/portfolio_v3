@@ -16,23 +16,23 @@ const textVariants = {
 		},
 	},
 };
-const sliderVariants = {
-	initial: {
-		x: "150%",
-	},
-	animate: {
-		x: "-220%",
+// const sliderVariants = {
+// 	initial: {
+// 		x: "150%",
+// 	},
+// 	animate: {
+// 		x: "-220%",
 
-		transition: {
-			repeat: Infinity,
-			repeatType: "mirror",
-			delay: 2,
-			// repeatDelay: 2,
-			// loop: Infinity,
-			duration: 30,
-		},
-	},
-};
+// 		transition: {
+// 			repeat: Infinity,
+// 			repeatType: "mirror",
+// 			delay: 2,
+// 			// repeatDelay: 2,
+// 			// loop: Infinity,
+// 			duration: 30,
+// 		},
+// 	},
+// };
 
 const Hero = () => {
 	return (

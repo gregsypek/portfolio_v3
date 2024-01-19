@@ -21,13 +21,14 @@ a {
 section {
 	scroll-snap-align: center;
 }
-
-section:not(#Experience) {
-	height: 100vh;
-}
+// #Homepage{
+// 	position:relative;
+// }
 
 #About {
 	background: linear-gradient(180deg, #111132, #0c0c1d);
+	// position: relative;
+	height: auto;
 }
 
 #Projects {
@@ -35,9 +36,11 @@ section:not(#Experience) {
 }
 #Experience {
 	background: linear-gradient(180deg, #111132, #0c0c1d);
+	height: auto;
 }
 #Contact {
 	background: linear-gradient(180deg, #0c0c1d, #111132);
+	height: auto;
 }
 #Footer {
 	background: linear-gradient(180deg, #111132, #0c0c1d);
@@ -95,7 +98,9 @@ section:not(#Experience) {
 	background-color: $background-color;
 	color: $text-color;
 	transition: background-color 0.3s ease;
-
+	@include mini {
+		padding: 0.8em 0.6em;
+	}
 	@include mobile {
 		font-size: 14px;
 	}
@@ -258,4 +263,18 @@ section:not(#Experience) {
 	background-color: transparent; /* color of the scroll thumb */
 	border-radius: 5px; /* roundness of the scroll thumb */
 	border: 4px solid #6f627e; /* creates padding around scroll thumb */
+}
+
+
+@include desktop {
+	section{
+		height: 100vh;
+}
+// 	section#Experience,
+// 	section#About
+// 	  {
+// 		height: auto;
+// }
+
+
 }

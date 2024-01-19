@@ -43,7 +43,7 @@ const Portfolio = () => {
 			<div className="grid">
 				<div className="projectsHeader" ref={ref}>
 					<div className="headerBox">
-						<h1>My Websites & Apps</h1>
+						<h1>Websites & Apps</h1>
 						{/* {windowWidth > 1200 && <img src={Line} alt="line" />} */}
 					</div>
 					{/* <div className="projectsFilter">
