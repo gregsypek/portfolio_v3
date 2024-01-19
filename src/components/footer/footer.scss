@@ -2,21 +2,16 @@
 
 .footer {
 	max-width: 1366px;
-	padding-block: 60px;
 	margin: auto;
-	display: flex;
-	flex-direction: column;
-	padding-inline: 20px;
-	height: 90%;
-	// *{
-	//   border: 1px solid white;
-	// }
+	display: grid;
+	padding: 60px 20px 20px 20px;
+	height: 100%;
 	.social {
-		align-self: flex-end;
+		justify-content: flex-end;
 		display: flex;
 		gap: 20px;
-		svg:hover{
-			color:#6F627E;
+		svg:hover {
+			color: #6f627e;
 		}
 	}
 
@@ -24,117 +19,108 @@
 		display: flex;
 		flex-direction: column;
 		gap: 90px;
-		flex: 2;
+		justify-content: space-between;
 		@include mobile {
-			gap:60px;
+			justify-content: center;
 		}
 		h1 {
 			font-size: 100px;
 			line-height: 88px;
-			margin-top:80px;
 			@include mobile {
 				font-size: 46px;
 				line-height: normal;
 			}
 			@include desktop {
-				margin-bottom:60px;
-
+				margin-bottom: 60px;
 			}
 			@include tv {
-				margin-bottom:60px;
-
+				margin-bottom: 60px;
 			}
 		}
 		p {
 			color: white;
-			font-size: 24px;
+			font-size: 22px;
 			line-height: 120%;
 
 			@include mobile {
 				font-size: 16px;
 			}
-	
 		}
 		.buttons {
 			display: flex;
-			gap: 5px;
-			font-size: 14px;
-      margin-bottom: 90px;
+			gap: 10px;
+			font-size: 18px;
+			margin-bottom: 90px;
+			@include mobile {
+				font-size: 14px;
+			}
+			@include tablet {
+				font-size: 16px;
+			}
 
-			
 			button.pdf {
-				cursor:pointer;
+				cursor: pointer;
 				text-transform: uppercase;
-				font-weight: 800;
+				font-weight: 600;
 				color: #2f132d;
 				display: flex;
 				flex-direction: column;
 				background-color: #bd8289;
 				border-radius: 5px;
-				padding: 14px 22px;
-				// align-items: center;
-				transition:  background-color .3s ease-in-out;
+				padding: 0.8em 1.4em;
+				font-size: inherit;
+				align-items: center;
+				border-top: 1px solid #18000d;
+				transition: background-color 0.3s ease-in-out;
 
 				gap: 2px;
 				&:hover {
-					background-color: lighten(#bd8289,20%);
+					background-color: lighten(#bd8289, 20%);
 				}
-	
+
 				span {
 					border-top: 3px solid #18000d;
 					width: 60%;
-					border-top-left-radius: 5px; 
-					border-top-right-radius: 5px; 
+					border-top-left-radius: 5px;
+					border-top-right-radius: 5px;
 				}
 			}
 			button.html {
 				text-transform: uppercase;
-				font-weight: 800;
+				font-weight: 600;
 				color: white;
 				display: flex;
 				flex-direction: column;
 				background-color: #645983;
 				border-radius: 5px;
-				padding: 14px 22px;
-				// align-items: center;
+				padding: 0.8em 1.4em;
+				align-items: center;
+				font-size: inherit;
+
 				gap: 2px;
-				cursor:pointer;
-				transition:  background-color .3s ease-in-out;
+				cursor: pointer;
+				transition: background-color 0.3s ease-in-out;
 
 				&:hover {
-					background-color: lighten(#645983,20%);
+					background-color: lighten(#645983, 20%);
 				}
-	
+
 				span {
 					border-top: 3px solid #18000d;
 					width: 60%;
-					border-top-left-radius: 5px; /* Dodałeś zaokrąglenie do lewego górnego narożnika */
-					border-top-right-radius: 5x; /* Dodałeś zaokrąglenie do prawego górnego narożnika */
-					// height: 3px;
-					// background-color: red;
+					border-top-left-radius: 5px; 
+					border-top-right-radius: 5x; 
 				}
 			}
 		}
-	
 	}
 	p.copyright {
 		font-size: 14px;
-		// align-self: flex-end;
 		max-width: 1366px;
-		// display: flex;
-		// justify-content: flex-end;
-		flex:1;
-		align-self: flex-end;
+		display: flex;
+		flex: 1;
+		justify-content: flex-end;
 	}
 
-	// .iconsContainer {
-	// 	flex: 1;
-	// 	display: flex;
-	// 	// flex-direction: column;
-	// 	// justify-content: space-between;
-	// 	justify-content: flex-end;
-	
-	
-	// }
 
 }

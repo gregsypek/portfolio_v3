@@ -7,13 +7,13 @@ function Footer() {
 			{/* <div className="iconsContainer"> */}
 			<div className="social">
 				<a href="https://twitter.com/gregsypek">
-					<BsTwitterX size={34} />
+					<BsTwitterX size={24} />
 				</a>
 				<a href="https://www.linkedin.com/in/grzegorz-sypek-47472a194/">
-					<LuLinkedin size={34} />
+					<LuLinkedin size={24} />
 				</a>
 				<a href="https://github.com/gregsypek">
-					<LuGithub size={34} />
+					<LuGithub size={24} />
 				</a>
 			</div>
 			{/* </div> */}

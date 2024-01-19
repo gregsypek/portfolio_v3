@@ -28,7 +28,6 @@ section {
 		position: sticky;
 		top: 0;
 		left: 0;
-		// padding-top: 50px;
 		display: flex;
 		justify-content: center;
 		align-items: flex-start;
@@ -39,16 +38,13 @@ section {
 		z-index: 100;
 		padding-bottom: 15px;
 		@include mobile {
-			// background-color: red;
 			padding-top: 20px;
-			// padding-bottom: calc(100vh + 60px);
 		}
 		@media (min-width: 900px) {
 			flex-direction: row;
 			justify-content: space-between;
 		}
 		.headerBox {
-			// padding: 20px;
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
@@ -147,7 +143,6 @@ section {
 			gap:5px;
 		}
 			.languages {
-				// margin-inline: 40px;
 				margin-bottom: 60px;
 				display: flex;
 				align-items: center;
@@ -190,16 +185,16 @@ section {
 						border-top-left-radius: 10px;
 						border-bottom-left-radius: 10px;
 						@include tablet2 {
-							border-top-left-radius: 0;
-							border-bottom-left-radius: 0;
+							border-top-left-radius: 5px;
+							border-bottom-left-radius: 5px;
 						}
 					}
 					&:last-of-type {
 						border-top-right-radius: 10px;
 						border-bottom-right-radius: 10px;
 						@include tablet2 {
-							border-top-right-radius: 0;
-							border-bottom-right-radius: 0;
+							border-top-right-radius: 5px;
+							border-bottom-right-radius: 5px;
 						}
 					}
 				}
@@ -210,7 +205,6 @@ section {
 				justify-content: center;
 				gap: 50px;
 
-				// height: calc(100% + 100px - 25vh);
 				height: calc(100% + 100px - 15vh);
 				@include tablet2 {
 					flex-direction: column;
@@ -266,7 +260,6 @@ section {
 							align-self: center;
 							height: 40px;
 							margin-right: 10px;
-							// transform: translateY(-10px);
 							@include tablet2 {
 								width: 20px;
 								height: 30px;
@@ -282,10 +275,9 @@ section {
 						align-items: center;
 						justify-content: center;
 						flex: 1;
-						object-fit: contain; // width: 100%;
+						object-fit: contain; 
 						@include tablet {
 							max-height: 350px;
-							// height: auto;
 						}
 						img {
 							height: 100%;
@@ -293,12 +285,10 @@ section {
 								object-fit: cover;
 								border-radius: 2px;
 								width: 90vw;
-								// max-height: 300px;
 								max-height: 33vh;
 							}
 							@include tablet {
 								height: 100%;
-								// object-fit: contain;
 								object-fit: cover;
 								max-width: 90vw;
 							}
@@ -323,13 +313,7 @@ section {
 					display: grid;
 					grid-template-rows: 40px 1fr 70px;
 					gap: 30px;
-					// height: 100%;
-
-					// @include mobile {
-					// 	transform: none !important;
-					// }
-					// @include tablet {
-					// }
+			
 					@include tablet2 {
 						transform: none !important;
 						gap: 12px;
@@ -343,7 +327,6 @@ section {
 
 					.textHeader {
 						display: flex;
-						// align-items: flex-start;
 						justify-content: space-between;
 
 						padding-bottom: 8px;
@@ -398,6 +381,7 @@ section {
 						margin-top: auto;
 						padding: 0.8em 1.2em;
 						display: block;
+						font-weight: normal;
 						@include tablet2 {
 							margin: 0px auto;
 						}
