@@ -1,7 +1,7 @@
 @import "../../app.scss";
 
 .contact {
-	height: 100vh;
+	height: 100%;
 	max-width: 1366px;
 	margin: auto;
 	display: flex;
@@ -10,23 +10,32 @@
 	padding:40px;
 	
 	@include mobile {
-		display: grid;
+		// display: grid;
 		transform: none !important;
-		gap: 0;
+		// gap: 20px;
 		width: 100%;
-		padding: 20px;
+		// padding: 20px;
 		flex-direction: column;
 	}
+
+	// @include tablet2 {
+	// 	// height: auto;
+	// }
 
 	.textContainer {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 		gap: 40px;
+		max-width: 450px;
+    min-width: 280px;
+    width: 100%;
 
 		@include mobile {
 			flex:1;
-			gap: 20px;
+			gap: 10px;
+			flex-direction: row;
+			flex-wrap: wrap;
 			text-align: center;
 			align-items: center;
 			// margin-top: 20px;
@@ -40,12 +49,11 @@
 			
 			@include mobile {
 				font-size: 40px;
+	margin:0 auto;
 			}
 			@include tablet {
 				font-size: 60px;
-				// margin-top: 100px;
 				text-align: left;
-				// text-align: center;
 			}
 			@media (min-width: 1482px) {
 				text-align:left;
@@ -96,7 +104,7 @@
 		justify-self: center;
 		@include mobile {
 			width: 100%;
-			padding: 20px;
+			padding-inline: 20px;
 			flex:2;
 		}
 
@@ -108,7 +116,6 @@
 			align-items: center;
 
 			@include tablet {
-				// margin-top: 100px;
 			}
 
 			input,

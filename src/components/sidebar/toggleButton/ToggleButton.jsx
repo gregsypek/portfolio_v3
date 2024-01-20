@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
+import "./toggleButton.scss";
 
 const ToggleButton = ({ setOpen }) => {
 	return (
 		<button
 			onClick={() => setOpen((prev) => !prev)}
-			style={{
-				position: "fixed",
-				top: "25px",
-				left: "25px",
-				// backgroundColor: "red",
-			}}
+			id="burger"
+			// style={{
+			// 	position: "fixed",
+			// 	top: "25px",
+			// 	left: "25px",
+			// 	// backgroundColor: "red",
+			// }}
 		>
 			<svg width="25" height="25" viewBox="0 0 20 20">
 				<motion.path
