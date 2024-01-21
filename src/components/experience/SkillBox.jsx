@@ -1,6 +1,10 @@
 import { useRef } from "react";
 
-function SkillBox({ box }) {
+function SkillBox({ box, onClick }) {
+	const handleSkillBoxClick = () => {
+		// Dodaj tutaj dodatkową logikę lub przekazanie informacji związanej z kliknięciem
+		onClick(box);
+	};
 	const rightContainerRef = useRef(null);
 	return (
 		<div className="workBox">
@@ -17,33 +21,39 @@ function SkillBox({ box }) {
 			<div className="workBody">
 				<div className="left">{box.desc}</div>
 				<div className="right" ref={rightContainerRef}>
-					{box.languages.map((lang) => (
-						<div
-							key={lang.name}
-							className="button60"
-							// data-shadow={`${lang.color}`}
-							// className={`button60(${lang.border})`}
-							style={{
-								backgroundColor: lang.backgroundColor,
-								color: lang.color,
-								gridColumn: lang.column,
-								gridRow: lang.row,
-								display: "flex",
-								flexDirection: "column",
-								gap: 5,
-							}}
-						>
-							{lang.name}
-							<span
+					{box.languages.map((lang) => {
+						// console.log("🚀 ~ {SkillBox ~ lang:", lang);
+						const { background, color, border } = lang.colors;
+						return (
+							<div
+								key={lang.name}
+								className="button60"
+								// data-shadow={`${lang.color}`}
+								// className={`button60(${lang.border})`}
 								style={{
-									borderTop: "3px solid #18000d",
-									width: "60%",
-									borderTopLeftRadius: 5,
-									borderTopRightRadius: 5,
+									backgroundColor: background,
+									color: color,
+									gridColumn: lang.column,
+									gridRow: lang.row,
+									display: "flex",
+									flexDirection: "column",
+									gap: 5,
 								}}
-							></span>
-						</div>
-					))}
+								// onClick={() => onPress(lang.skillId, lang.experienceId)}
+								onClick={handleSkillBoxClick}
+							>
+								{lang.name}
+								<span
+									style={{
+										borderTop: "3px solid #18000d",
+										width: "60%",
+										borderTopLeftRadius: 5,
+										borderTopRightRadius: 5,
+									}}
+								></span>
+							</div>
+						);
+					})}
 				</div>
 			</div>
 		</div>

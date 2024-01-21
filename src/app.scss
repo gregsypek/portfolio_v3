@@ -13,19 +13,20 @@ html {
 body {
 	background-color: #0c0c1d;
 	color: lightgray;
+	overflow-y: scroll;
 }
 a {
 	text-decoration: none;
 	color: inherit;
 }
-// section {
-// 	scroll-snap-align: center;
-// 	min-height: 100vh;
-// }
+section {
+	scroll-snap-align: center;
+	min-height: 100vh;
+}
 
 section:not(:has(.content-exceeds-100vh)) {
-  scroll-snap-align: center;
-  min-height: 100vh;
+  // scroll-snap-align: center;
+  // min-height: 100vh;
   transform: none !important;
 }
 
@@ -37,7 +38,7 @@ section:not(:has(.content-exceeds-100vh)) {
 #About {
 	background: linear-gradient(180deg, #111132, #0c0c1d);
 	// position: relative;
-	// height: auto;
+	height: auto;
 }
 
 #Projects {
@@ -49,7 +50,7 @@ section:not(:has(.content-exceeds-100vh)) {
 }
 #Contact {
 	background: linear-gradient(180deg, #0c0c1d, #111132);
-	height: 100vh;
+	height: auto;
 }
 #Footer {
 	background: linear-gradient(180deg, #111132, #0c0c1d);

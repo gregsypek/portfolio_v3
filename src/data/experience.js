@@ -1,6 +1,6 @@
 export const experience = [
 	{
-		id: 1,
+		id: 0,
 		year: "2023",
 		title: "React Native Developer",
 		name: "SOLVE-NET",
@@ -8,7 +8,7 @@ export const experience = [
 		languages: ["React", "React Native", "Typescript", "Node"],
 	},
 	{
-		id: 2,
+		id: 1,
 		year: "2022",
 		title: "Junior Application Developer",
 		name: "ZETO",

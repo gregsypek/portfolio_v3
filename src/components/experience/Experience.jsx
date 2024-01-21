@@ -6,6 +6,8 @@ import { useWindowSize } from "react-use";
 
 function Experience() {
 	const { width: windowWidth } = useWindowSize();
+	const [skillBoxes, setSkillBoxes] = useState([]);
+	console.log("🚀 ~ Experience ~ skillBoxes:", skillBoxes);
 
 	const skillColors = [
 		{ background: "#675C83", color: "#22183f", border: "#8089e6" },
@@ -20,14 +22,6 @@ function Experience() {
 		return skillColors[randomIndex];
 	};
 
-	// const getRandomColumn = () => {
-	// 	const randomNumber = Math.random();
-	// 	return randomNumber < 0.33
-	// 		? 1
-	// 		: randomNumber >= 0.33 && randomNumber < 0.66
-	// 		? 2
-	// 		: 3;
-	// };
 	const getRandomColumn = (maxColumn) => {
 		const randomNumber = Math.random();
 		const columns = Array.from({ length: maxColumn }, (_, index) => index + 1);
@@ -35,32 +29,83 @@ function Experience() {
 		const randomIndex = Math.floor(randomNumber * columns.length);
 		return columns[randomIndex];
 	};
-	const [skillBoxes, setSkillBoxes] = useState([]);
 
-	useEffect(() => {
-		const newSkillBoxes = experience.map((work, index) => {
-			const { name, desc, year, title, languages } = work;
+	const colorSet = (skills) => {
+		return skills.map(() => getRandomColor());
+	};
 
-			const languageColors = languages.map(() => getRandomColor());
+	const skillSet = (skills) => {
+		const languageColors = colorSet(skills);
 
+		const test = skills.map((name, langIndex) => {
 			return {
-				id: index,
-				languages: languages.map((lang, langIndex) => ({
-					name: lang,
-					color: languageColors[langIndex].color,
-					backgroundColor: languageColors[langIndex].background,
-					column: windowWidth > 1000 ? getRandomColumn(3) : getRandomColumn(2),
-					row: langIndex + 1,
-					// border: lang.border,
-				})),
+				skillId: langIndex,
 				name,
-				desc,
-				year,
-				title,
+				colors: languageColors[langIndex],
+				// backgroundColor: languageColors[langIndex].background,
+				column: windowWidth > 1000 ? getRandomColumn(3) : getRandomColumn(2),
+				row: langIndex + 1,
+				// border: lang.border,
 			};
 		});
-		setSkillBoxes(newSkillBoxes);
+		return test;
+	};
+
+	const newBoxSkill = (work) => {
+		// console.log("🚀 ~ setBoxSkill ~ work:", work);
+		const { name, desc, year, title, languages, id } = work;
+
+		const boxSkill = {
+			id,
+			languages: skillSet(languages),
+			name,
+			desc,
+			year,
+			title,
+		};
+
+		// setSkillBoxes((prev) => [...prev, boxSkill]);
+		// console.log("🚀 ~ Experience ~ skillBoxes:", skillBoxes);
+		return boxSkill;
+	};
+
+	useEffect(() => {
+		const newSkillBoxes = [];
+		experience.map((work) => {
+			newSkillBoxes.push(newBoxSkill(work, work.id));
+		});
+		// console.log("🚀 ~ useEffect ~ setSkillBoxes:", skillBoxes);
+		if (newSkillBoxes.length) {
+			setSkillBoxes(newSkillBoxes);
+		}
 	}, []);
+
+	const handleSkillBoxClick = (clickedBox) => {
+		console.log("🚀 ~ handleSkillBoxClick ~ clickedBox:", clickedBox);
+
+		const languageColors = colorSet(clickedBox.languages);
+		console.log("🚀 ~ handleSkillBoxClick ~ languageColors:", languageColors);
+
+		const updatedSkillBoxes = skillBoxes.map((box) => {
+			if (box.id === clickedBox.id) {
+				return {
+					...clickedBox,
+					languages: clickedBox.languages.map((l, index) => ({
+						...l,
+						colors: languageColors[index],
+						column:
+							windowWidth > 1000 ? getRandomColumn(3) : getRandomColumn(2),
+						row: index + 1,
+					})),
+				};
+			} else {
+				return box;
+			}
+		});
+
+		// Update the skillBoxes directly with the modified clickedBox
+		setSkillBoxes(updatedSkillBoxes);
+	};
 
 	return (
 		<div className="experience">
@@ -68,8 +113,15 @@ function Experience() {
 				<h1>Experiences{windowWidth < 800 && <br />} & Skills</h1>
 				{/* <img src={Line} alt="line" /> */}
 			</div>
+			{/* {console.log("🚀 ~ Experience ~ skillBoxes:", skillBoxes)} */}
 			{skillBoxes.map((box) => {
-				return <SkillBox box={box} key={box.id} />;
+				return (
+					<SkillBox
+						box={box}
+						key={box.id}
+						onClick={() => handleSkillBoxClick(box)}
+					/>
+				);
 			})}
 		</div>
 	);
