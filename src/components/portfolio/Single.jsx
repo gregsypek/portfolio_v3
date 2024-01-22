@@ -1,11 +1,13 @@
 // import { useScroll, useTransform } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
-// import { SlSizeFullscreen } from "react-icons/sl";
+import { SlSizeFullscreen } from "react-icons/sl";
 import { LuGithub } from "react-icons/lu";
+import MyModal from "../../data/modal/Modal";
 function Single({ item }) {
 	const ref = useRef();
 
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 	const handleNext = useCallback(() => {
@@ -36,6 +38,15 @@ function Single({ item }) {
 		},
 		[handleNext, handlePrev]
 	);
+
+	const handleOpenModal = () => {
+		setIsModalOpen(true);
+	};
+
+	const handleCloseModal = () => {
+		// Funkcja do zamknięcia modala i zresetowania stanu
+		setIsModalOpen(false);
+	};
 
 	useEffect(() => {
 		window.addEventListener("keydown", handleKeyDown);
@@ -75,15 +86,18 @@ function Single({ item }) {
 						</div>
 						<div className="imageContainer" ref={ref}>
 							<div className="buttons">
-								{/* <SlSizeActual /> */}
-								{/* <button>
-									<SlSizeFullscreen size={28} />
-								</button> */}
-								{/* <div className="vertical-line"></div> */}
+								{item.fullView && (
+									<>
+										<button className="fullScreen" onClick={handleOpenModal}>
+											<SlSizeFullscreen size={28} />
+										</button>
+										<div className="vertical-line"></div>{" "}
+									</>
+								)}
 								<button onClick={handlePrev} disabled={isSingleImage}>
 									<FaArrowLeftLong size={28} />
 								</button>
-								{/* <div className="vertical-line"></div> */}
+								<div className="vertical-line"></div>
 								<button
 									className="active"
 									onClick={handleNext}
@@ -102,6 +116,15 @@ function Single({ item }) {
 					</div>
 				</div>
 			</div>
+
+			{isModalOpen && (
+				<MyModal
+					image={item?.fullView}
+					link={item?.live}
+					desc={item?.title}
+					onClose={handleCloseModal}
+				/>
+			)}
 		</section>
 	);
 }

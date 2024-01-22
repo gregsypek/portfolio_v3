@@ -254,6 +254,14 @@ section {
 								opacity: 0.5;
 								cursor: not-allowed;
 							}
+
+							&.fullScreen,
+							&.fullScreen + .vertical-line {
+								display: block;
+								@include tablet2 {
+									display: none;
+								}
+							}
 						}
 						.vertical-line {
 							border-right: 4px solid #625781;
