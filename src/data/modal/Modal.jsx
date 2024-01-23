@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Modal from "react-modal";
-import "./modal.scss";
 import { IoMdClose } from "react-icons/io";
 
 const modalStyle = {
