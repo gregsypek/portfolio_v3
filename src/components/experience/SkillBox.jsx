@@ -14,7 +14,8 @@ function SkillBox({ box, onClick }) {
 					<div className="year">{box.year}</div>
 					<p>{box.name}</p>
 					<span>
-						<hr color="#92888C" />
+						{/* Languages */}
+						{/* <hr color="#92888C" /> */}
 					</span>
 				</div>
 			</div>

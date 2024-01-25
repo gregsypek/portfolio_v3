@@ -1,7 +1,6 @@
 @import "../../app.scss";
 
 .experience {
-
 	height: 100%;
 	min-height: 100vh;
 	width: 100%;
@@ -14,11 +13,10 @@
 	@include mobile {
 		padding-inline: 20px;
 		transform: none !important;
-
 	}
 	.headerBox {
 		padding-inline: 20px;
-		margin-bottom: 80px;
+		margin-bottom: 20px;
 		height: auto;
 		// padding-block: 80px;
 		@include mobile {
@@ -28,8 +26,7 @@
 		h1 {
 			@include header;
 			text-align: center;
-		
-			
+
 			@include mobile {
 				font-size: 36px;
 			}
@@ -38,14 +35,14 @@
 				// text-align: center;
 			}
 			@media (min-width: 1482px) {
-				text-align:left;
+				text-align: left;
 			}
 		}
 	}
 	.workBox {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		// justify-content: center;
 		align-items: flex-start;
 
 		.workHeader {
@@ -58,7 +55,7 @@
 				.year {
 					margin-right: 20px;
 					padding: 0.2em 1.2em;
-					background-color: #f9ecdc;
+					background-color: tra;
 					position: relative;
 					font-weight: 400;
 					font-size: 24px;
@@ -66,8 +63,9 @@
 					align-items: center;
 					justify-content: center;
 
-					color: black;
+					// color: black;
 					border-radius: 5px;
+					border: 1px solid;
 					@include mobile {
 						font-size: 16px;
 					}
@@ -83,16 +81,37 @@
 				}
 				span {
 					display: flex;
-					flex: 1;
+					// flex: 1;
+					margin-left: auto;
+					border: 1px solid white;
+					@include button60;
 					align-items: center;
-					justify-content: flex-start;
-					margin-left: 20px;
-					hr {
-						width: 100%;
-						color: #3b3559;
-						@include mobile {
-							display: none;
-						}
+					justify-content: center;
+					color: #593766;
+					background-color: #272145;
+					cursor: auto;
+					border: 1px solid #17000D;
+					&::before {
+						background-color: #0E0822;
+						// background-color: transparent;
+					}
+					&:hover {
+						background-color: #272145;
+					}
+					&:active {
+						transform: none;
+					}
+
+					width: 120px;
+					// hr {
+					// 	// width: 100%;
+					// 	color: #3b3559;
+					// 	@include mobile {
+					// 		display: none;
+					// 	}
+					// }
+					@include tablet2 {
+						display: none;
 					}
 				}
 			}
@@ -104,36 +123,33 @@
 
 			@include tablet {
 				gap: 60px;
-		
 			}
 
 			.left {
 				flex: 1;
 				margin-left: 85px;
 				// border-left: 3px solid #92888c;
-				padding: 58px 18px 58px 48px;
+				padding: 16px 18px 16px 48px;
 
-			
 				// @include mini {
-			
+
 				// 	text-align: center;
 				// }
 				// @include mini {
 
 				// 	font-size: 14px;
 				// }
-				@include mobile {		
+				@include mobile {
 					margin-left: 0px;
 					padding: 24px 0 12px 10px;
 					text-align: left;
-					font-size: 16px;
+					font-size: 14px;
 				}
 				@include tablet {
-					flex:3;
-					margin-left: 40px;			
+					flex: 3;
+					margin-left: 40px;
 					font-size: 18px;
 					padding: 22px 0 12px 10px;
-				
 				}
 			}
 			.right {
@@ -141,17 +157,18 @@
 				display: grid;
 				grid-gap: 0;
 				grid-template-columns: 120px 120px 120px;
-				grid-template-rows: 80px 80px;
+				grid-template-rows: 60px 60px;
 				@include mobile {
 					grid-template-columns: 80px 80px;
 					grid-template-rows: 60px 60px;
 					display: none;
 				}
 				@include tablet {
-					flex:1;
-					grid-template-columns: 80px 80px;
-					grid-template-rows: 60px 60px;
-			
+					flex: 1;
+					// grid-template-columns: 80px 80px;
+					// grid-template-rows: 60px 60px;
+					grid-template-columns: 60px 60px;
+					grid-template-rows: 40px 40px;
 				}
 
 				div {
@@ -163,7 +180,7 @@
 					width: 120px;
 					// padding:10px;
 					// padding: 1.5px;
-					height: 80px;
+					height: 60px;
 					@include mobile {
 						width: 80px;
 						// padding: 1.5px;
@@ -172,17 +189,16 @@
 					@include tablet {
 						width: 80px;
 						// padding: 1.5px;
-						height: 60px;
-				
+						height: 80px;
 					}
 					&.button60 {
 						// $custom-color: attr(data-shadow);
 						// @include button60(var($custom-color));
 						@include button60;
+						gap: 0;
 					}
 				}
 			}
 		}
 	}
-
 }

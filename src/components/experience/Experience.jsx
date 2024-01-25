@@ -11,8 +11,8 @@ function Experience() {
 
 	const skillColors = [
 		{ background: "#675C83", color: "#22183f", border: "#8089e6" },
-		{ background: "#272145", color: "#F9ECDC", border: "#8089e6" },
-		{ background: "#5E3F60", color: "#F9ECDC", border: "#8089e6" },
+		{ background: "#272145", color: "#D2D2D2", border: "#8089e6" },
+		{ background: "#5E3F60", color: "#D2D2D2", border: "#8089e6" },
 		{ background: "#BD838B", color: "#22183f", border: "#8089e6" },
 		{ background: "#593766", color: "black", border: "#8089e6" },
 	];

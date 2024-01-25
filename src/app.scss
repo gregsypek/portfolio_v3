@@ -198,12 +198,12 @@ section:not(:has(.content-exceeds-100vh)) {
 	border: 0;
 	vertical-align: middle;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 16px;
 	color: black;
 	font-weight: 500;
 	text-transform: uppercase;
 	font-family: inherit;
-	height: 80px;
+	height: 60px;
 	width: 120px;
 	text-align: center;
 
@@ -219,7 +219,7 @@ section:not(:has(.content-exceeds-100vh)) {
 	@include tablet {
 		width: 80px;
 		// padding: 1.5px;
-		height: 60px;
+		height: 40px;
 	}
 	&::before {
 		position: absolute;
