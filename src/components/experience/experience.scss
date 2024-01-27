@@ -16,7 +16,7 @@
 	}
 	.headerBox {
 		padding-inline: 20px;
-		margin-bottom: 20px;
+		margin-bottom: 100px;
 		height: auto;
 		// padding-block: 80px;
 		@include mobile {
@@ -86,6 +86,7 @@
 					border: 1px solid white;
 					@include button60;
 					align-items: center;
+					transition: "all 3s ease-in-out";
 					justify-content: center;
 					color: #593766;
 					background-color: #272145;
@@ -195,6 +196,7 @@
 						// $custom-color: attr(data-shadow);
 						// @include button60(var($custom-color));
 						@include button60;
+						border-width: 2px;
 						gap: 0;
 					}
 				}

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import "./experience.scss";
 import { experience } from "../../data/experience";
+
 import SkillBox from "./SkillBox";
 import { useWindowSize } from "react-use";
 
 function Experience() {
 	const { width: windowWidth } = useWindowSize();
 	const [skillBoxes, setSkillBoxes] = useState([]);
-	console.log("🚀 ~ Experience ~ skillBoxes:", skillBoxes);
 
 	const skillColors = [
 		{ background: "#675C83", color: "#22183f", border: "#8089e6" },
@@ -64,8 +64,6 @@ function Experience() {
 			title,
 		};
 
-		// setSkillBoxes((prev) => [...prev, boxSkill]);
-		// console.log("🚀 ~ Experience ~ skillBoxes:", skillBoxes);
 		return boxSkill;
 	};
 
@@ -74,17 +72,13 @@ function Experience() {
 		experience.map((work) => {
 			newSkillBoxes.push(newBoxSkill(work, work.id));
 		});
-		// console.log("🚀 ~ useEffect ~ setSkillBoxes:", skillBoxes);
 		if (newSkillBoxes.length) {
 			setSkillBoxes(newSkillBoxes);
 		}
 	}, []);
 
 	const handleSkillBoxClick = (clickedBox) => {
-		console.log("🚀 ~ handleSkillBoxClick ~ clickedBox:", clickedBox);
-
 		const languageColors = colorSet(clickedBox.languages);
-		console.log("🚀 ~ handleSkillBoxClick ~ languageColors:", languageColors);
 
 		const updatedSkillBoxes = skillBoxes.map((box) => {
 			if (box.id === clickedBox.id) {
@@ -103,7 +97,6 @@ function Experience() {
 			}
 		});
 
-		// Update the skillBoxes directly with the modified clickedBox
 		setSkillBoxes(updatedSkillBoxes);
 	};
 
@@ -111,9 +104,7 @@ function Experience() {
 		<div className="experience">
 			<div className="headerBox">
 				<h1>Experiences{windowWidth < 800 && <br />} & Skills</h1>
-				{/* <img src={Line} alt="line" /> */}
 			</div>
-			{/* {console.log("🚀 ~ Experience ~ skillBoxes:", skillBoxes)} */}
 			{skillBoxes.map((box) => {
 				return (
 					<SkillBox

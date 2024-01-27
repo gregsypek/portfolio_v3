@@ -4,6 +4,23 @@ import { FaArrowRightLong, FaArrowLeftLong } from "react-icons/fa6";
 import { SlSizeFullscreen } from "react-icons/sl";
 import { LuGithub } from "react-icons/lu";
 import MyModal from "../../data/modal/Modal";
+import { motion } from "framer-motion";
+
+const lineVariants = {
+	initial: {
+		x: 0,
+		opacity: 0,
+	},
+	animate: {
+		x: 0,
+		opacity: 1,
+		transition: {
+			duration: 1.5,
+			staggerChildren: 0.2,
+		},
+	},
+};
+
 function Single({ item }) {
 	const ref = useRef();
 
@@ -61,11 +78,18 @@ function Single({ item }) {
 			<div className="container">
 				{/* <div className="empty"></div> */}
 				<div className="wrapper">
-					<div className="languages">
+					<motion.div
+						className="languages"
+						variants={lineVariants}
+						initial="initial"
+						whileInView="animate"
+					>
 						{item.tags.map((tag) => (
-							<span key={tag}>{tag}</span>
+							<motion.span key={tag} variants={lineVariants}>
+								{tag}
+							</motion.span>
 						))}
-					</div>
+					</motion.div>
 					<div className="projectBox">
 						<div className="textContainer">
 							<div className="textHeader">
