@@ -1,10 +1,11 @@
 import "./hero.scss";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 
 const textVariants = {
 	initial: {
-		x: -500,
+		// x: -500,
 		opacity: 0,
 	},
 	animate: {
@@ -16,25 +17,22 @@ const textVariants = {
 		},
 	},
 };
-// const sliderVariants = {
-// 	initial: {
-// 		x: "150%",
-// 	},
-// 	animate: {
-// 		x: "-220%",
 
-// 		transition: {
-// 			repeat: Infinity,
-// 			repeatType: "mirror",
-// 			delay: 2,
-// 			// repeatDelay: 2,
-// 			// loop: Infinity,
-// 			duration: 30,
-// 		},
-// 	},
-// };
+const skills = ["React ", "Vue ", "Node "];
 
 const Hero = () => {
+	const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentSkillIndex((prevIndex) =>
+				prevIndex === skills.length - 1 ? 0 : prevIndex + 1
+			);
+		}, 6000);
+
+		return () => clearInterval(interval);
+	}, []);
+
 	return (
 		<div className="hero">
 			<div className="wrapper">
@@ -65,20 +63,41 @@ const Hero = () => {
 						</motion.button>
 					</motion.div>
 				</motion.div>
-			</div>
-			{/* <div></div> */}
-			{/* <motion.div
-				className="slidingTextContainer"
-				variants={sliderVariants}
-				initial="initial"
-				animate="animate"
-			>
-				{skills?.map((skill) => (
-					<strong key={skill}>{skill}</strong>
-				))}
-			</motion.div> */}
-			<div className="imageContainer">
-				<img src="/hero.png" alt="me" />
+
+				<div></div>
+				<motion.div
+					className="slidingTextContainer"
+					// variants={sliderVariants}
+					// initial="initial"
+					// animate="animate"
+				>
+					{skills.map((skill, index) => (
+						<motion.div
+							key={index}
+							initial={{ opacity: 0 }}
+							animate={{
+								opacity: index === currentSkillIndex ? 1 : 0,
+								transition: { duration: 1.5, delay: 1.5 },
+							}}
+							style={{
+								display: "inline-block",
+								transition: "opacity 1.5s ease-in-out",
+							}}
+						>
+							<strong
+								key={index}
+								style={{
+									display: index === currentSkillIndex ? "block" : "none",
+								}}
+							>
+								{skill}
+							</strong>
+						</motion.div>
+					))}
+				</motion.div>
+				<div className="imageContainer">
+					<img src="/hero.png" alt="me" />
+				</div>
 			</div>
 		</div>
 	);
