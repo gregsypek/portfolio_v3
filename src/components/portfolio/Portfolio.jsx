@@ -13,38 +13,39 @@ const Portfolio = () => {
 	const ref = useRef();
 	const { width: windowWidth } = useWindowSize();
 
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					setIsHeaderSticky(false);
-				} else setIsHeaderSticky(true);
-			},
-			{ threshold: 1 }
-		);
+	// useEffect(() => {
+	// 	const observer = new IntersectionObserver(
+	// 		([entry]) => {
+	// 			if (entry.isIntersecting) {
+	// 				setIsHeaderSticky(false);
+	// 			} else setIsHeaderSticky(true);
+	// 		},
+	// 		{ threshold: 1 }
+	// 	);
 
-		if (lastItemRef.current) {
-			observer.observe(lastItemRef.current);
-		}
+	// 	if (lastItemRef.current) {
+	// 		observer.observe(lastItemRef.current);
+	// 	}
 
-		return () => {
-			if (lastItemRef.current) {
-				observer.unobserve(lastItemRef.current);
-			}
-		};
-	}, []);
+	// 	return () => {
+	// 		if (lastItemRef.current) {
+	// 			observer.unobserve(lastItemRef.current);
+	// 		}
+	// 	};
+	// }, []);
 
 	return (
 		<div className="portfolio" id="Projects">
 			<div className="grid">
-				<div
+				<div className="projectsHeader sticky" ref={ref}>
+					{/* <div
 					className={`projectsHeader ${isHeaderSticky ? "sticky" : "absolute"}`}
 					style={{
 						position: isHeaderSticky ? "sticky" : "absolute",
 						top: isHeaderSticky ? "0" : `${items.length - 1}00vh`,
 					}}
 					ref={ref}
-				>
+				> */}
 					<div className="headerBox">
 						{windowWidth < 1000 ? (
 							<h1>My Projects</h1>
