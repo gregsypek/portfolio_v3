@@ -18,7 +18,7 @@ const textVariants = {
 	},
 };
 
-const skills = ["React ", "Vue ", "Node "];
+const skills = ["React", "Vue", "Node"];
 
 const Hero = () => {
 	const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
@@ -77,7 +77,7 @@ const Hero = () => {
 							initial={{ opacity: 0 }}
 							animate={{
 								opacity: index === currentSkillIndex ? 1 : 0,
-								transition: { duration: 1.5, delay: 1.5 },
+								transition: { duration: 1, delay: 1 },
 							}}
 							style={{
 								display: "inline-block",

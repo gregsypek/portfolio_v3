@@ -6,7 +6,7 @@ import { LuGithub } from "react-icons/lu";
 import MyModal from "../../data/modal/Modal";
 import { motion } from "framer-motion";
 
-const lineVariants = {
+const skillVariants = {
 	initial: {
 		x: 0,
 		opacity: 0,
@@ -15,7 +15,7 @@ const lineVariants = {
 		x: 0,
 		opacity: 1,
 		transition: {
-			duration: 1.5,
+			duration: 1,
 			staggerChildren: 0.2,
 		},
 	},
@@ -80,12 +80,12 @@ function Single({ item }) {
 				<div className="wrapper">
 					<motion.div
 						className="languages"
-						variants={lineVariants}
+						variants={skillVariants}
 						initial="initial"
 						whileInView="animate"
 					>
 						{item.tags.map((tag) => (
-							<motion.span key={tag} variants={lineVariants}>
+							<motion.span key={tag} variants={skillVariants}>
 								{tag}
 							</motion.span>
 						))}

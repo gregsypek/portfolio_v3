@@ -8,7 +8,6 @@ import { useWindowSize } from "react-use";
 function Experience() {
 	const { width: windowWidth } = useWindowSize();
 	const [skillBoxes, setSkillBoxes] = useState([]);
-
 	const skillColors = [
 		{ background: "#675C83", color: "#22183f", border: "#8089e6" },
 		{ background: "#272145", color: "#D2D2D2", border: "#8089e6" },
@@ -103,7 +102,12 @@ function Experience() {
 	return (
 		<div className="experience">
 			<div className="headerBox">
-				<h1>Experiences{windowWidth < 800 && <br />} & Skills</h1>
+				{windowWidth < 1000 ? (
+					<h1>Experiences</h1>
+				) : (
+					<h1>Experiences & Skills</h1>
+				)}
+				{/* <h1>Experiences{windowWidth < 800 && <br />} & Skills</h1> */}
 			</div>
 			{skillBoxes.map((box) => {
 				return (

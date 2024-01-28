@@ -12,7 +12,7 @@ const skillsVariants = {
 
 		opacity: 1,
 		transition: {
-			duration: 1,
+			duration: 0.6,
 			staggerChildren: 0.2,
 		},
 	},
@@ -68,7 +68,7 @@ function SkillBox({ box, onClick }) {
 								onClick={handleSkillBoxClick}
 							>
 								{lang.name}
-								<motion.span
+								{/* <motion.span
 									variants={skillsVariants}
 									style={{
 										borderTop: "3px solid #18000d",
@@ -76,7 +76,7 @@ function SkillBox({ box, onClick }) {
 										borderTopLeftRadius: 5,
 										borderTopRightRadius: 5,
 									}}
-								></motion.span>
+								></motion.span> */}
 							</motion.div>
 						);
 					})}

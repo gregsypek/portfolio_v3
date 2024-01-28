@@ -1,13 +1,30 @@
 @import "../../app.scss";
 
 section {
-	height: 100vh;
+	// height: 100vh;
+	height: clamp(auto, 100vh, auto);
 }
 
 .portfolio {
 	position: relative;
 	height: 100%;
 	margin: 0 auto;
+
+	// .progress {
+	// 	position: sticky;
+	// 	top: 0;
+	// 	left: 0;
+	// 	padding-top: 50px;
+	// 	text-align: center;
+	// 	color: orange;
+	// 	font-size: 36px;
+	// 	background-color: red;
+
+	// 	.progressBar {
+	// 		height: 10px;
+	// 		background-color: white;
+	// 	}
+	// }
 	.sectionInfo {
 		display: flex;
 		align-items: center;
@@ -25,8 +42,28 @@ section {
 	}
 
 	.projectsHeader {
-		position: sticky;
+		width: 100%;
+	height:  20vh ;
+
+		@include mobile {
+			height:  15vh;
+		}
+		@include tablet {
+			height: 13vh;
+		}
+
+		&.sticky {
+			position: sticky;
+		}
+		&.absolute {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		// position:relative;
+		// display: none;
 		top: 0;
+		// bottom:20vh;
 		left: 0;
 		display: flex;
 		justify-content: center;
@@ -53,6 +90,7 @@ section {
 			width: 100%;
 			@include mobile {
 				justify-content: flex-end;
+				width: 90vw;
 			}
 			@include tablet {
 				justify-content: center;
@@ -282,7 +320,7 @@ section {
 					.image {
 						max-height: 50vh;
 						height: 100%;
-					
+
 						// width: auto;
 						width: 100%;
 						overflow: hidden;
@@ -292,12 +330,12 @@ section {
 						flex: 1;
 						object-fit: contain;
 						// @include tablet2 {
-							// 	// max-height: 350px;
-							// 	max-height: clamp(300px, 50vh, 450px);
-							// }
-							img {
+						// 	// max-height: 350px;
+						// 	max-height: clamp(300px, 50vh, 450px);
+						// }
+						img {
 							border-radius: 10px;
-							width:auto;
+							width: auto;
 							object-position: top;
 							height: 100%;
 							@include mobile {
@@ -306,13 +344,13 @@ section {
 								width: 90vw;
 								// max-height: 33vh;
 								// height: clamp(250px, 40vh, 450px);
-								height:clamp(225px, 35vh, 450px);
+								height: clamp(225px, 35vh, 450px);
 							}
 							@include tablet {
-								height:clamp(300px, 45vh, 600px);
+								height: clamp(300px, 45vh, 600px);
 								object-fit: cover;
 								max-width: 90vw;
-								width:100%;
+								width: 100%;
 							}
 						}
 					}

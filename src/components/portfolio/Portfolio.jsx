@@ -1,67 +1,68 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./portfolio.scss";
 // import Line from "../../../public/line.svg";
 import { items } from "../../data/items";
 import Single from "./Single";
 import { useWindowSize } from "react-use";
+
 const Portfolio = () => {
+	const lastItemRef = useRef(null);
+	const [isHeaderSticky, setIsHeaderSticky] = useState(true);
+	const [lastItemRendered, setLastItemRendered] = useState(false);
+	// Ustaw wartość początkową zgodnie z Twoimi potrzebami
 	const ref = useRef();
 	const { width: windowWidth } = useWindowSize();
-	// const { scrollYProgress } = useScroll({
-	// 	target: ref,
-	// 	offset: ["end end", "start start"],
-	// });
 
-	// const scaleX = useSpring(scrollYProgress, {
-	// 	stiffness: 100,
-	// 	damping: 30,
-	// });
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setIsHeaderSticky(false);
+				} else setIsHeaderSticky(true);
+			},
+			{ threshold: 1 }
+		);
 
-	// const skills = [
-	// 	"JavaScript",
-	// 	"React",
-	// 	"Node",
-	// 	"Php",
-	// 	"Wordpress",
-	// 	"Redux",
-	// 	"Vue",
-	// 	"Next",
-	// 	"2023",
-	// 	"2022",
-	// 	"2021",
-	// ];
+		if (lastItemRef.current) {
+			observer.observe(lastItemRef.current);
+		}
+
+		return () => {
+			if (lastItemRef.current) {
+				observer.unobserve(lastItemRef.current);
+			}
+		};
+	}, []);
 
 	return (
 		<div className="portfolio" id="Projects">
-			{/* <div className="sectionInfo">
-				<hr />
-				<p>
-					Select project from filter list
-					<br /> and check it out!
-				</p>
-			</div> */}
 			<div className="grid">
-				<div className="projectsHeader" ref={ref}>
+				<div
+					className={`projectsHeader ${isHeaderSticky ? "sticky" : "absolute"}`}
+					style={{
+						position: isHeaderSticky ? "sticky" : "absolute",
+						top: isHeaderSticky ? "0" : `${items.length - 1}00vh`,
+					}}
+					ref={ref}
+				>
 					<div className="headerBox">
 						{windowWidth < 1000 ? (
 							<h1>My Projects</h1>
 						) : (
 							<h1>My Websites & Apps</h1>
 						)}
-						{/* {windowWidth > 1200 && <img src={Line} alt="line" />} */}
 					</div>
-					{/* <div className="projectsFilter">
-						<div className="active">All</div>
-						{skills.map((skill) => (
-							<div key={skill}>{skill}</div>
-						))}
-					</div> */}
-					{/* <motion.div style={{ scaleX }} className="progressBar"></motion.div> */}
 				</div>
 				<div className="image-box">
-					{items.map((item) => (
-						<Single item={item} key={item.id} />
+					{items.map((item, index) => (
+						<div key={item.id}>
+							<Single item={item} />
+							{index === items.length - 1 && <div ref={lastItemRef}></div>}
+						</div>
 					))}
+				</div>
+				<div className="progress">
+					<div className="progressBar"></div>
 				</div>
 			</div>
 		</div>
