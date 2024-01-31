@@ -66,21 +66,22 @@ const About = () => {
 					// animate="animate"
 				>
 					<motion.p variants={textVariants}>
-						I am a frontend developer with five years of programming experience,
-						specializing in React, React Native, and Vue.js. Lastly I have been
-						working as application programmer, using React Native, React and
-						Typescript on application for enginerrs, and as junior developer in
-						Rzeszów on a big e-commerce app.
+						I am a frontend developer with five years of programming experience.
+						I specialize in React, React Native, and Vue.js. Recently, I have
+						been working as an application programmer, utilizing React Native,
+						React, and TypeScript to develop applications for engineers.
+						Additionally, I worked as a junior developer in Rzeszów on a large
+						e-commerce application.
 					</motion.p>
 					<motion.hr variants={lineVariants}></motion.hr>
 				</motion.div>
 
 				<div className="about__text about__text--2">
 					<motion.p variants={textVariants}>
-						I live in a small town of Mielec in Poland. I am a self-taught
+						I live in the small town of Mielec in Poland. I am a self-taught
 						learner who is passionate about computers and coding. In my spare
-						time I love listening to progressive rock, reading books and hiking
-						in the mountains.
+						time, I enjoy listening to progressive rock, reading books, and
+						hiking in the mountains.
 					</motion.p>
 					<motion.hr variants={lineVariants}></motion.hr>
 				</div>
