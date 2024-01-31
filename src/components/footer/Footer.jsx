@@ -20,7 +20,7 @@ function Footer() {
 			<div className="textContainer">
 				<h1>Reach out for more?</h1>
 				<p>
-					I am available on twitter and linkedin. <br />
+					I am available on Twitter and Linkedin. <br />
 					You can also check my CV below.
 				</p>
 				<div className="buttons">

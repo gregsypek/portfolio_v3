@@ -46,8 +46,8 @@ const Hero = () => {
 						Web Developer & <br /> Content Creator
 					</motion.h1>
 					<motion.h2 variants={textVariants}>
-						Hi my name is Greg Sypek, I design and create web pages and projects
-						with attention to clarity and details.
+						Hi, my name is Greg Sypek, and I design, and create web pages and
+						projects with attention to detail and clarity.
 					</motion.h2>
 
 					<motion.div variants={textVariants} className="buttons">

@@ -4,7 +4,7 @@ export const experience = [
 		year: "2023",
 		title: "React Native Developer",
 		name: "SOLVE-NET",
-		desc: "I played a crucial role in a development team, focusing on technologies like React, React Native, TypeScript, and Node.js. I enhanced an existing mobile app for the construction industry by adding features, optimizing functionality, and developed a Node.js program for language translation. My experience at SOLVE-NET enriched my skills in project development using tools like Redmine.",
+		desc: "I played a crucial role in a development team, focusing on technologies like React, React Native, TypeScript, and Node.js. I enhanced an existing mobile app for the construction industry by adding features, optimizing functionality, and developing a Node.js program for language translation. My experience at SOLVE-NET enriched my skills in project development using tools like Redmine.",
 		languages: ["React", "React Native", "Typescript", "Node"],
 	},
 	{
