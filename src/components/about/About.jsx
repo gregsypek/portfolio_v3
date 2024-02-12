@@ -20,13 +20,16 @@ const textVariants = {
 		},
 	},
 };
+
 const lineVariants = {
 	initial: {
-		x: -300,
+		x: -50,
+		width: "10%",
 		opacity: 0,
 	},
 	animate: {
 		x: 0,
+		width: "100%",
 		opacity: 1,
 		transition: {
 			duration: 1.5,
@@ -60,12 +63,14 @@ const About = () => {
 				</div>
 				<motion.div
 					className="about__text about__text--1"
-					variants={lineVariants}
+					variants={textVariants}
 					initial="initial"
 					whileInView="animate"
+					// isInView="animate"
+					// ref={ref}
 					// animate="animate"
 				>
-					<motion.p variants={textVariants}>
+					<motion.p variants={textVariants} whileInView="animate">
 						I am a frontend developer with five years of programming experience.
 						I specialize in React, React Native, and Vue.js. Recently, I have
 						been working as an application programmer, utilizing React Native,
@@ -76,20 +81,27 @@ const About = () => {
 					<motion.hr variants={lineVariants}></motion.hr>
 				</motion.div>
 
-				<div className="about__text about__text--2">
-					<motion.p variants={textVariants}>
+				<motion.div
+					className="about__text about__text--2"
+					initial="initial"
+					variants={textVariants}
+					whileInView="animate"
+				>
+					<motion.p variants={textVariants} whileInView="animate">
 						I live in the small town of Mielec in Poland. I am a self-taught
 						learner who is passionate about computers and coding. In my spare
 						time, I enjoy listening to progressive rock, reading books, and
 						hiking in the mountains.
 					</motion.p>
 					<motion.hr variants={lineVariants}></motion.hr>
-				</div>
+				</motion.div>
 				<motion.div
 					className="about__text about__text--3"
+					initial="initial"
 					variants={textVariants}
+					whileInView="animate"
 				>
-					<motion.span>
+					<motion.span variants={textVariants} whileInView="animate">
 						Currently I am looking for a job as a web developer. I am confident
 						that my skills and dedication make me an asset to any team. I am
 						willing{" "}
