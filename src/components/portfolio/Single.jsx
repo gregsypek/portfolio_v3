@@ -96,11 +96,13 @@ function Single({ item }) {
 								{/* <div className="square">React</div> */}
 								<div className="title">
 									<h4>{item.title}</h4>
-									<a href={`${item.github}`} target="_blank" rel="noreferrer">
-										<span>
-											<LuGithub size={24} color="#625781" />
-										</span>
-									</a>
+									{item.github ? (
+										<a href={`${item.github}`} target="_blank" rel="noreferrer">
+											<span>
+												<LuGithub size={24} color="#625781" />
+											</span>
+										</a>
+									) : null}
 								</div>
 							</div>
 							<p>{item.desc}</p>

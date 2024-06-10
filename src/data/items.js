@@ -49,7 +49,7 @@ export const items = [
 	},
 	{
 		id: 4,
-		title: "Schody",
+		title: "Schody Zaliński",
 		images: [
 			"./projects/schody1.png",
 			"./projects/schody2.png",
@@ -58,10 +58,9 @@ export const items = [
 			"./projects/schody5.png",
 		],
 		fullView: "./projects/schody_full.png",
-		desc: "I have created a web application for a client—an uncomplicated, fully responsive website built on WordPress. It does not rely on external themes, ensuring exceptional speed and cleanliness while featuring dynamic content sourced from a MySQL database. I have created a similar website using Node.js. You can find the corresponding link on the GitHub icon.",
-		tags: ["Wordpress", "PHP", "MySQL", "Scss", "2022"],
-		live: "https://gregsypek.github.io/schodystaticword/index.html",
-		github: "https://github.com/gregsypek/schodystaticword/",
+		desc: "I designed and developed the website for Schody Zaliński using WordPress. This project involved creating a custom logo, crafting the content, and designing the entire layout. The site showcases a range of wooden staircases, highlighting both modern and classic designs. Key features include detailed product descriptions, high-quality images, and a user-friendly interface that ensures a seamless browsing experience. The focus was on blending aesthetic appeal with functionality to enhance user engagement and satisfaction.",
+		tags: ["Wordpress", "PHP", "MySQL", "Scss", "2024"],
+		live: "https://schodyzalinski.pl",
 	},
 	{
 		id: 5,
