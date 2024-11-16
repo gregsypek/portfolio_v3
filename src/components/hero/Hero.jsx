@@ -18,7 +18,7 @@ const textVariants = {
 	},
 };
 
-const skills = ["React", "Vue", "Node"];
+const skills = ["React", "React Native", "Node", "Next", "Typescript"];
 
 const Hero = () => {
 	const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
@@ -46,8 +46,8 @@ const Hero = () => {
 						Web Developer & <br /> Content Creator
 					</motion.h1>
 					<motion.h2 variants={textVariants}>
-						Hi, my name is Greg Sypek, and I design, and create web pages and
-						projects with attention to detail and clarity.
+						Hi, my name is Greg Sypek, I design, create web pages and
+						projects with attention to details and clarity.
 					</motion.h2>
 
 					<motion.div variants={textVariants} className="buttons">

@@ -25,24 +25,23 @@ const Sidebar = () => {
 	const variants = {
 		open: {
 			clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-			background: "white",
+			backgroundColor: "white",
 			transition: {
 				type: "spring",
-				stiffness: 20,
+				stiffness: 150,
+				damping: 40,
 			},
 		},
 		closed: {
-			clipPath: " polygon(0 0, 50px 0, 50px 50px, 0 50px)",
-			y: "25px",
-			x: width < 738 ? "5px" : "25px",
-			// x: "25px",
-			border: 0,
-			background: "transparent", //how to do this or anoher way?
-			// backgroundColor:"transparent",
+			clipPath: "polygon(0%, 0%, 50% 25%, 50% 50%, 25% 50%)",
+
+			opacity: 0, // Hide the element completely
+			backgroundColor: "transparent",
 			transition: {
 				delay: 0.3,
+				opacity: { duration: 0.3 }, // Ensure it fades out quickly
 				type: "spring",
-				stiffness: 400,
+				stiffness: 150,
 				damping: 40,
 			},
 		},
