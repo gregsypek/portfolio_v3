@@ -24,25 +24,25 @@ const Sidebar = () => {
 	}, [width, updateWidth]);
 	const variants = {
 		open: {
-			clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-			backgroundColor: "white",
+			clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
+			backgroundColor: "rgb(255, 255, 255)",
 			transition: {
 				type: "spring",
-				stiffness: 150,
-				damping: 40,
+				stiffness: 100,
+				damping: 20,
 			},
 		},
 		closed: {
-			clipPath: "polygon(0%, 0%, 50% 25%, 50% 50%, 25% 50%)",
+			clipPath: "polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%)",
 
 			opacity: 0, // Hide the element completely
-			backgroundColor: "transparent",
+			backgroundColor: "rgba(0, 0, 0, 0.01)",
 			transition: {
 				delay: 0.3,
 				opacity: { duration: 0.3 }, // Ensure it fades out quickly
 				type: "spring",
-				stiffness: 150,
-				damping: 40,
+				stiffness: 100,
+				damping: 20,
 			},
 		},
 	};
